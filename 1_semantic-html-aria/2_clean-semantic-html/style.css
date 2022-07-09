@@ -1,0 +1,34 @@
+body {
+  border: 4px solid grey;
+  margin: 0;
+  height: 100%;
+  padding: 10px;
+}
+
+header {
+  background-color: green;
+  height: 200px;
+  width: 100%;
+}
+
+nav {
+  background-color: lightblue;
+  height: 100px;
+  width: 50%;
+}
+
+article {
+  background-color: orange;
+  height: 500px;
+}
+
+figure {
+  margin: 0;
+  background-color: aquamarine;
+  height: 100px;
+}
+
+footer {
+  height: 250px;
+  background-color: cornflowerblue;
+}
