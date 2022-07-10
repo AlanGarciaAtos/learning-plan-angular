@@ -1,6 +1,6 @@
 # Learning plan angular 😔
 
-[To the notion of where I noted my misadventures of this master plan](https://www.notion.so/Roadmap-Angular-b8490e079d76429c84dd7e50dc957b26)
+[To the notion of where I noted my misadventures of this master plan](https://warp-pancake-fdf.notion.site/Roadmap-Angular-b8490e079d76429c84dd7e50dc957b26)
 
 We have a ton of activities, let's wrap it up.
 
