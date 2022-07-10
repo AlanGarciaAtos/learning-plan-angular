@@ -6,7 +6,15 @@ We have a ton of activities, let's wrap it up.
 
 1. SEMANTIC HTML & ARIA
 
-AGRADECIDO CON Bivil M Jacob
+AGRADECIDO CON Bivil M Jacob y ᵘˢᵘᵃʳᶦᵒˢ ᵈᵉ ˢᵗᵃᶜᵏᵒᵛᵉʳᶠˡᵒʷ
+
+[Another git process seems to be running in this repository](https://stackoverflow.com/questions/38004148/another-git-process-seems-to-be-running-in-this-repository)
+
+# Update Angular CLI or deleted it
+
+### This help me solve the issue
+
+[Npm throws EACCES error on installation of Angular CLI](https://stackoverflow.com/questions/42042300/npm-throws-eacces-error-on-installation-of-angular-cli)
 
 ### With this super tutorial I FIX IT.
 
