@@ -1,5 +1,7 @@
 # SEO for Developers
 
+[The Ultimate Guide to SEO Meta Tags](https://moz.com/blog/the-ultimate-guide-to-seo-meta-tags)
+
 ## Rules of SEO
 
 1. Create good content
