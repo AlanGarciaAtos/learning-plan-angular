@@ -1,19 +1,24 @@
 # Learning plan angular 😔
 
+### TODO List
+
+1. [](https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/)
+2. [How](https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-04/)
+
 [To the notion of where I noted my misadventures of this master plan](https://warp-pancake-fdf.notion.site/Roadmap-Angular-b8490e079d76429c84dd7e50dc957b26)
 
 We have a ton of activities, let's wrap it up.
 
 1. SEMANTIC HTML & ARIA
+2. CSS & PREPROCESSORS
 
 AGRADECIDO CON Bivil M Jacob y ᵘˢᵘᵃʳᶦᵒˢ ᵈᵉ ˢᵗᵃᶜᵏᵒᵛᵉʳᶠˡᵒʷ
 
 [Another git process seems to be running in this repository](https://stackoverflow.com/questions/38004148/another-git-process-seems-to-be-running-in-this-repository)
 
-# Update Angular CLI or deleted it
-
 ### This help me solve the issue
 
+Update Angular CLI or deleted it later because I installed it global
 [Npm throws EACCES error on installation of Angular CLI](https://stackoverflow.com/questions/42042300/npm-throws-eacces-error-on-installation-of-angular-cli)
 
 ### With this super tutorial I FIX IT.

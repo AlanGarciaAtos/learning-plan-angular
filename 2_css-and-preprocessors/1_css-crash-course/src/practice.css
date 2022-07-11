@@ -1,0 +1,71 @@
+.body-text strong {
+  color: cornflowerblue;
+}
+
+/* ------ */
+p {
+  font-family: 'Tahoma', Arial, Helvetica, sans-serif;
+}
+/*Block elements width and height can be modified. But span and anchor can't. We could changed it*/
+
+.sub-text {
+  font-weight: 700;
+  border: 2px dashed green;
+  width: 50%;
+  height: 150px;
+  padding: 1em;
+  margin: 1rem;
+}
+
+#title:hover {
+  background-color: blue;
+  color: white;
+}
+
+input:focus {
+  background-color: red;
+}
+
+/*I didn't know about this transition easy peezy*/
+button {
+  background-color: antiquewhite;
+  border: none;
+  padding: 10px 18px; /*Change to em/rem*/
+  font-weight: bold;
+  transition: background-color 0.5s, color 1s;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+}
+
+#outer {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+#inner {
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+}
+
+/* Specificty  NEVER use !important if possible*/
+
+#myParagraph {
+  color: green;
+}
+
+.text {
+  color: blue;
+}
+
+p {
+  color: black;
+}
