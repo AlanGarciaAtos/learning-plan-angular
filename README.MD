@@ -2,12 +2,12 @@
 
 ### TODO List
 
-1. [](https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/)
-2. [How](https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-04/)
+1. [Run multiple nodejs version on the same machine](https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/)
+2. [How to install nvm on Ubuntu](https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-04/)
 
 [To the notion of where I noted my misadventures of this master plan](https://warp-pancake-fdf.notion.site/Roadmap-Angular-b8490e079d76429c84dd7e50dc957b26)
 
-We have a ton of activities, let's wrap it up.
+### We have a ton of activities, let's wrap it up.
 
 1. SEMANTIC HTML & ARIA
 2. CSS & PREPROCESSORS
