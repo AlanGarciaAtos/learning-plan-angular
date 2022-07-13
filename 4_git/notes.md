@@ -46,3 +46,27 @@ git merge main
 1. Open index.html in your browser
 2. Have fun
 3. testing branch
+
+<hr>
+
+### Git Workflows Strategies
+
+GitHub Flow
+
+1- Proyect have a singular main branch
+2- Created a new branch with the features
+3- Make a PR, team discuss it
+4- Deploy and then merge
+
+### Git flow
+
+> **_Keywords:_** Main, develop, feature, release and hotfix
+
+- Long lived branches
+- Simultaneous development
+- New features & current releases
+
+- When you want to release make a release branch, by branching off the latest release branch and cherry-picking the features you want on it.
+- For hotfixes, branch of the latest release branch, fix, merge back into it. Once the crisis is over, merge the hotfix branch into master as well.
+
+You can even add tags! Github recognized it. (Ex: v1.2, v1.3.4, and so on)
