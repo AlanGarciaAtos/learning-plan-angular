@@ -6,6 +6,9 @@
 
 1. [Run multiple nodejs version on the same machine](https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/)
 2. [How to install nvm on Ubuntu](https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-04/)
+3. [A guide to how to use CSS & SASS with AIRBNB](https://github.com/airbnb/css)
+4. [A guide to how to use](https://github.com/airbnb/javascript)
+5. git restore
 
 ## We have a ton of activities, let's wrap it up.
 

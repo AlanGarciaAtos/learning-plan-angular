@@ -2,12 +2,6 @@
 
 (Documentation)[https://sass-lang.com/documentation/]
 
-### TODO LIST
-
-- How to structure folder of sass
-- Is it bad to nest a lot or what is the limit
-- transition: 1s ease-out; works but no transition: all 0.2 ease-in-out;
-
 ### Configuration in settings.json for sass
 
 Although I don't why we would use it.
