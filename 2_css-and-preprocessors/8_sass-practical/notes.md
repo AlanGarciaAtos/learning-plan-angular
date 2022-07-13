@@ -35,6 +35,10 @@ They say it's better to use @use & @forward instead of @import.
 
 We can simply add a comma. @import resets, variables;
 
+```scss
+@import 'scss/config', 'scss/home'... 'scss/menu';
+```
+
 ## Variables
 
 Using the dollar sign
