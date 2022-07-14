@@ -1,0 +1,48 @@
+.finance-cloud {
+  text-align: center;
+
+  &__heading {
+    p {
+      margin: 1em 0;
+    }
+
+    & > *:not(p) {
+      margin-bottom: 2em;
+    }
+
+    h4 {
+      letter-spacing: 5px;
+      border-bottom: 1px solid $blue-dot;
+      // margin-bottom: 1em;
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+  }
+
+  &__cards {
+    & > * {
+      margin-bottom: 3em;
+    }
+  }
+
+  &__card {
+    border: 1px solid $subtitle-gray;
+    border-radius: 10px;
+    padding: 1em 1em;
+
+    h5,
+    p {
+      margin-bottom: 1.5em;
+    }
+
+    h5 {
+      font-size: 1rem;
+    }
+
+    p {
+      color: $subtitle-gray;
+    }
+  }
+}
