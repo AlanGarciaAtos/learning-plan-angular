@@ -1,0 +1,14 @@
+.nav {
+  &__menu {
+    display: none;
+  }
+
+  h2 {
+    color: $white-text;
+    text-align: center;
+  }
+
+  span {
+    color: $blue-dot;
+  }
+}

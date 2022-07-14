@@ -1,0 +1,29 @@
+.hero {
+  color: $white-text;
+  text-align: center;
+  padding-bottom: 3em;
+
+  &__title {
+    padding-top: 2em;
+    font-weight: normal;
+  }
+
+  &__subtitle {
+    font-size: 0.8rem;
+    margin: 2em 0;
+    color: $subtitle-gray;
+    word-spacing: 1px;
+  }
+
+  .space {
+    word-spacing: 15px;
+  }
+
+  .btn {
+    background-color: $primary-btn;
+    padding: 0.8em;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 60%;
+  }
+}

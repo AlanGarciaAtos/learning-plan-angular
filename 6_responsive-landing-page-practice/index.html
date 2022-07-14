@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Lanfing Page practice</title>
+    <title>Responsive Landing Page practice</title>
     <link rel="stylesheet" href="./style/main.css" />
     <script src="./js/index.js" defer></script>
   </head>
@@ -12,7 +12,9 @@
     <header>
       <!-- TODO Changed the emojis to icons -> -->
       <!-- TODO Some way to node use another div, maybe use flexbasis or other property-->
+      <!-- ? Is it better to use svg than png for like icons or the hamburger menu -->
       <nav class="nav">
+        <!-- <img src="./img/hamburgermenu.png" alt="Hamburger menu" /> -->
         <h2 class="">every<span>.</span></h2>
         <ul class="nav__menu">
           <div class="nav__menu__wrapper">
@@ -31,16 +33,20 @@
     </header>
     <main>
       <section class="hero">
-        <h1 class="hero__title">Landing page</h1>
-        <p class="hero__subtitle">Banck Accounts</p>
-        <p class="hero__subtitle">Bill Payments</p>
-        <p class="hero__subtitle">Corporate Cards</p>
-        <p class="hero__subtitle">Payroll</p>
-        <p class="hero__subtitle">HR</p>
-        <p class="hero__subtitle opacity">
-          Setup all your finance and HR operations in under 10 minutes
-        </p>
-        <a href="#">Open Account ➡ </a>
+        <div class="container">
+          <h1 class="hero__title">
+            <strong>Banking</strong> and <strong>Payroll</strong> for Startups
+          </h1>
+          <p class="hero__subtitle space">
+            Bank Accounts | Bill Payments | Corporate Cards | Payroll | HR
+          </p>
+          <p class="hero__subtitle">
+            Setup all your finance and HR operations in under 10 minutes
+          </p>
+          <div class="btn">
+            <a href="#">Open Account ➡ </a>
+          </div>
+        </div>
       </section>
 
       <!-- ! NOT VISIBLE IN MOBILE -->
@@ -63,50 +69,53 @@
       </article>
 
       <article class="finance-cloud">
-        <section class="finance-cloud__heading">
-          <p>🏛</p>
-          <h4 class="benefits__subtitle">FINANCE CLOUD</h4>
-          <h2 class="benefits__title">Banking, Supercharged with a 4% APY</h2>
-        </section>
-        <section class="finance-cloud__cards">
-          <div class="finance-cloud__card">
-            <p>🏬</p>
-            <h5>Bank Accounts (FDIC-Insured)</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adip.</p>
-          </div>
-          <div class="finance-cloud__card">
-            <p>🏬</p>
-            <h5>Bill Payments</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adip.</p>
-          </div>
-          <div class="finance-cloud__card">
-            <p>🏬</p>
-            <h5>Corporate Cards</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adip.</p>
-          </div>
-        </section>
+        <div class="container">
+          <section class="finance-cloud__heading">
+            <p>🏛</p>
+            <h4 class="benefits__subtitle">FINANCE CLOUD</h4>
+            <h2 class="benefits__title">Banking, Supercharged with a 4% APY</h2>
+          </section>
+          <section class="finance-cloud__cards">
+            <div class="finance-cloud__card">
+              <p>🏬</p>
+              <h5>Bank Accounts (FDIC-Insured)</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adip.</p>
+            </div>
+            <div class="finance-cloud__card">
+              <p>🏬</p>
+              <h5>Bill Payments</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adip.</p>
+            </div>
+            <div class="finance-cloud__card">
+              <p>🏬</p>
+              <h5>Corporate Cards</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adip.</p>
+            </div>
+          </section>
+        </div>
       </article>
 
       <article class="treasury">
-        <section class="earnings">
-          <div class="earnings__header">
-            <h2>Every 4% APY Treasury</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus.
-            </p>
-          </div>
-
-          <div class="earnings__input">
-            <label for="quantity">Enter how much you will deposit</label>
-            <input type="number" id="quantity" placeholder="10,000" />
-            <button class="earnings__btn btn">Calculate</button>
-          </div>
-
-          <div class="earnings__calculation">
-            <p>In 1 year you will earn</p>
-            <h2 class="earnings__total">$11,256.34</h2>
-          </div>
-        </section>
+        <div class="container">
+          <section class="earnings">
+            <div class="earnings__header">
+              <h2>Every 4% APY Treasury</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus.
+              </p>
+            </div>
+            <div class="earnings__input">
+              <label for="quantity">Enter how much you will deposit</label>
+              <input type="number" id="quantity" placeholder="10,000" />
+              <button class="earnings__btn btn">Calculate</button>
+            </div>
+            <div class="earnings__calculation">
+              <p>In 1 year you will earn</p>
+              <h2 class="earnings__total">$11,256.34</h2>
+            </div>
+          </section>
+        </div>
       </article>
 
       <!-- ! NOT VISIBLE IN MOBILE -->
@@ -139,32 +148,34 @@
       </article>
 
       <article class="pricing">
-        <section class="pricing__info">
-          <p>⛳</p>
-          <h4 class="pricing__subtitle">PRICING</h4>
-          <h2 class="pricing__title">Every is free to use</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed quasi
-            nesciunt odit doloribus.
-          </p>
-          <a href="#" class="btn">See Full Pricing ➡</a>
-        </section>
-        <section class="pricing__aside">
-          <div class="pricing__startup">
-            <h3>Startup</h3>
+        <div class="container">
+          <section class="pricing__info">
+            <p>⛳</p>
+            <h4 class="pricing__subtitle">PRICING</h4>
+            <h2 class="pricing__title">Every is free to use</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Molestiae maxime nam asperiores quo eum, odio sequi?
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed
+              quasi nesciunt odit doloribus.
             </p>
-          </div>
-          <div class="pricing__concierge">
-            <h3>Concierge</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Molestiae maxime nam asperiores quo eum, odio sequi?
-            </p>
-          </div>
-        </section>
+            <a href="#" class="btn">See Full Pricing ➡</a>
+          </section>
+          <section class="pricing__aside">
+            <div class="pricing__startup">
+              <h3>Startup</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Molestiae maxime nam asperiores quo eum, odio sequi?
+              </p>
+            </div>
+            <div class="pricing__concierge">
+              <h3>Concierge</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Molestiae maxime nam asperiores quo eum, odio sequi?
+              </p>
+            </div>
+          </section>
+        </div>
       </article>
 
       <!-- ! NOT VISIBLE IN MOBILE -->
@@ -236,35 +247,36 @@
 
       <!-- ? I honestly don't know if this is a footer -->
       <article class="process">
-        <section class="process__heading">
-          <p>⛳</p>
-          <h4 class="process__subtitle">OUR PROGRESS</h4>
-          <h2 class="process__title">
-            Setup all your Finance and HR operations in 3 steps.
-          </h2>
-        </section>
-        <section class="process__cards">
-          <div class="process__card">
-            <p>🏬</p>
-            <h5>Fill out bank application</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adip.</p>
-          </div>
-          <div class="process__card">
-            <p>🏬</p>
-            <h5>Get approved</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adip.</p>
-          </div>
-          <div class="process__card">
-            <p>🏬</p>
-            <h5>Setup payroll</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adip.Lorem ipsum dolor sit
-              amet consectetur adip.
-            </p>
-          </div>
-
-          <button class="btn">Open Account ➡</button>
-        </section>
+        <div class="container">
+          <section class="process__heading">
+            <p>⛳</p>
+            <h4 class="process__subtitle">OUR PROGRESS</h4>
+            <h2 class="process__title">
+              Setup all your Finance and HR operations in 3 steps.
+            </h2>
+          </section>
+          <section class="process__cards">
+            <div class="process__card">
+              <p>🏬</p>
+              <h5>Fill out bank application</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adip.</p>
+            </div>
+            <div class="process__card">
+              <p>🏬</p>
+              <h5>Get approved</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adip.</p>
+            </div>
+            <div class="process__card">
+              <p>🏬</p>
+              <h5>Setup payroll</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adip.Lorem ipsum dolor
+                sit amet consectetur adip.
+              </p>
+            </div>
+            <button class="btn">Open Account ➡</button>
+          </section>
+        </div>
       </article>
     </main>
   </body>
