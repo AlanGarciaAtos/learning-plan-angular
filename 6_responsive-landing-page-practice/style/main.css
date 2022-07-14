@@ -70,6 +70,59 @@
   color: #bac0c9;
 }
 
+.treasury {
+  border-radius: 10px;
+  color: #f0f0f1;
+}
+.treasury .earnings {
+  padding: 1em 1.5em 1em 1.5em;
+  background-color: #161b2c;
+  border-radius: 10px;
+}
+.treasury .earnings > * {
+  margin-bottom: 1em;
+}
+.treasury .earnings .earnings__header h2 {
+  margin-bottom: 1em;
+}
+.treasury .earnings__input {
+  font-weight: bold;
+}
+.treasury .earnings__input input {
+  background-color: #161b2c;
+  border: 1px solid rgba(186, 192, 201, 0.2);
+  padding: 0.8em;
+  border-radius: 5px;
+  margin-top: 1em;
+}
+.treasury .earnings__input button {
+  background-color: #4069ff;
+  padding: 0.8em;
+  border-radius: 10px;
+  border: none;
+  margin: 0 auto;
+  width: 60%;
+  cursor: pointer;
+  color: #f0f0f1;
+  margin-top: 1em;
+  width: 100%;
+}
+.treasury .earnings__input button:hover {
+  background-color: blueviolet;
+}
+.treasury .earnings__calculation {
+  background-color: #242b40;
+  text-align: center;
+  padding: 1.5em 0;
+  border-radius: 5px;
+}
+.treasury .earnings__calculation .earnings__total {
+  margin-top: 0.5em;
+}
+.treasury span {
+  color: #7eb6d4;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -102,6 +155,7 @@ a {
 
 .all-in-one,
 .hr-cloud,
-.differentiator {
+.differentiator,
+.pricing {
   display: none;
 }/*# sourceMappingURL=main.css.map */

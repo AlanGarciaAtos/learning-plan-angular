@@ -1,0 +1,64 @@
+.treasury {
+  border-radius: 10px;
+  color: $white-text;
+  .earnings {
+    padding: 1em 1.5em 1em 1.5em;
+    background-color: $bg-primary;
+    border-radius: 10px;
+    // I think this code bad xd & > *
+    & > * {
+      margin-bottom: 1em;
+    }
+
+    .earnings__header {
+      h2 {
+        margin-bottom: 1em;
+      }
+    }
+
+    &__input {
+      font-weight: bold;
+
+      input {
+        background-color: $bg-primary;
+        border: 1px solid rgba($subtitle-gray, 0.2);
+        padding: 0.8em;
+        border-radius: 5px;
+        margin-top: 1em;
+      }
+
+      button {
+        // @include style-button;
+        background-color: $primary-btn;
+        padding: 0.8em;
+        border-radius: 10px;
+        border: none;
+        margin: 0 auto;
+        width: 60%;
+        cursor: pointer;
+        color: $white-text;
+        margin-top: 1em;
+        width: 100%;
+
+        &:hover {
+          background-color: blueviolet;
+        }
+      }
+    }
+
+    &__calculation {
+      background-color: $bg-secondary;
+      text-align: center;
+      padding: 1.5em 0;
+
+      border-radius: 5px;
+      .earnings__total {
+        margin-top: 0.5em;
+      }
+    }
+  }
+
+  span {
+    color: $accent-light-blue;
+  }
+}
