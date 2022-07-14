@@ -41,11 +41,51 @@ git merge main
 
 ```
 
-## Local Development
+In the next image is an example of branching (simple)
+(Basic Git branching)[https://i.postimg.cc/GtrgCLhv/Basic-git-branch-workflow.png]
 
-1. Open index.html in your browser
-2. Have fun
-3. testing branch
+<hr>
+
+### Git workflows practical
+
+The perfect commit. We have 3 files a perfect commit would be file 1 and 2. File 3 in another commit.
+<br>
+It's better to do a lot of small commits than few humongous commits.
+
+**The perfect commit message**
+
+1- Subject = concise summary of what happened <br>
+2- Body = more detailed explanation
+
+- What is now different than before?
+- What's the reason for the change?
+- Is tehre anythong to watch out for / anything
+  particularly remarkable?
+
+_**Example**_ <br>
+Add captcha for email signup
+Email signups now require a captcha to be completed:
+
+- signup.php uses our captcha library
+- invalid signup attempts are now blocked
+
+**Git** will tell you when happens a conflict.
+
+It can occur a merge conflict while integrating commits from different sources
+``` git merge, rebase, pull, stash apply, cherry-pick ````
+How to solve it? Simply clean up the file!
+
+How to undo a conflict and start over
+You can always undo and start fresh!
+
+`git merge --abort` <br> `git rebase --abort`
+
+**Merge** and **rebase** they're different
+`git rebase branch-B`
+
+> **Do NOT Rebase on commits that you've already pshed/shared on a remote repository**
+
+Instead, use it for cleaning up for your local commit history before merging it into a shared team branch
 
 <hr>
 
@@ -59,6 +99,9 @@ GitHub Flow
 4- Deploy and then merge
 
 ### Git flow
+
+In the next image is an example of a worflow (simple)
+(Basic Git flow)[https://i.postimg.cc/d1c42sCg/Basic-git-workflow.png]
 
 > **_Keywords:_** Main, develop, feature, release and hotfix
 

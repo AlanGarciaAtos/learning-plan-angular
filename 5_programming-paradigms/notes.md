@@ -3,8 +3,14 @@
 ## Introduction
 
 Imperative Programming
+Start doing this and then do that.
 
 Functional programming
+At least in javascript avoid iterating! Use map,reduce, slice, etc.
+
+Avoid immutability
+
+Structural sharing instead of changing,removing or creatinga new array
 
 ## Object Oriented Programming
 
