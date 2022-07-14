@@ -123,6 +123,63 @@
   color: #7eb6d4;
 }
 
+.process {
+  text-align: center;
+  color: #f0f0f1;
+  margin-top: 4em;
+}
+.process .container {
+  padding: 1em;
+  background: linear-gradient(90deg, rgb(37, 79, 226) 0%, rgb(143, 210, 253) 100%);
+  border-radius: 15px;
+}
+.process__heading p {
+  margin: 1em 0;
+}
+.process__heading > *:not(p) {
+  margin-bottom: 2em;
+}
+.process__heading h4 {
+  letter-spacing: 5px;
+  border-bottom: 1px solid #f0f0f1;
+}
+.process__heading h2 {
+  font-size: 1.8rem;
+  word-spacing: 5px;
+  line-height: 2.6rem;
+}
+.process__title {
+  font-weight: normal;
+}
+.process__cards > * {
+  margin-bottom: 3em;
+}
+.process__cards button {
+  background-color: #f0f0f1;
+  padding: 0.8em;
+  border-radius: 8px;
+  border: none;
+  margin: 0 auto;
+  width: 60%;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+}
+.process__card {
+  background-color: rgba(186, 192, 201, 0.2);
+  border-radius: 10px;
+  padding: 1em;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+.process__card h5,
+.process__card p {
+  margin-bottom: 1.5em;
+}
+.process__card h5 {
+  font-size: 1rem;
+}
+
 * {
   padding: 0;
   margin: 0;

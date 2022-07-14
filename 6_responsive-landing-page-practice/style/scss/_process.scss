@@ -1,2 +1,75 @@
 .process {
+  text-align: center;
+  color: $white-text;
+  margin-top: 4em;
+
+  .container {
+    padding: 1em;
+    background: linear-gradient(
+      90deg,
+      rgba(37, 79, 226, 1) 0%,
+      rgba(143, 210, 253, 1) 100%
+    );
+    border-radius: 15px;
+  }
+
+  &__heading {
+    p {
+      margin: 1em 0;
+    }
+
+    & > *:not(p) {
+      margin-bottom: 2em;
+    }
+
+    h4 {
+      letter-spacing: 5px;
+      border-bottom: 1px solid $white-text;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      word-spacing: 5px;
+      line-height: 2.6rem;
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+  }
+
+  &__cards {
+    & > * {
+      margin-bottom: 3em;
+    }
+
+    button {
+      background-color: $white-text;
+      padding: 0.8em;
+      border-radius: 8px;
+      border: none;
+      margin: 0 auto;
+      width: 60%;
+      cursor: pointer;
+      color: black;
+      font-weight: bold;
+    }
+  }
+
+  &__card {
+    background-color: rgba($subtitle-gray, $alpha: 0.2);
+    border-radius: 10px;
+    padding: 1em;
+    margin-right: 1em;
+    margin-left: 1em;
+
+    h5,
+    p {
+      margin-bottom: 1.5em;
+    }
+
+    h5 {
+      font-size: 1rem;
+    }
+  }
 }
