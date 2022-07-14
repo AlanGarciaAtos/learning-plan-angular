@@ -1,4 +1,4 @@
-@import './variables/variables';
+@import './scss/variables';
 
 * {
   padding: 0;
@@ -13,3 +13,8 @@ body {
 .main__title {
   color: crimson;
 }
+
+// table,
+// td {
+//   border: 1px solid #333;
+// }
