@@ -1,4 +1,4 @@
-@import './scss/variables';
+@import './scss/variables', './scss/navbar', './scss/hero';
 
 * {
   padding: 0;
@@ -8,10 +8,11 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  color: $gray-text;
 }
 
-.main__title {
-  color: crimson;
+header {
+  background-color: $bg-primary;
 }
 
 // table,
