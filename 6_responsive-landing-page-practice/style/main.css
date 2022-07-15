@@ -65,6 +65,7 @@
 }
 .finance-cloud__heading img {
   width: 8%;
+  max-width: 1.83em;
   margin: 2em 0 0.6em 0;
 }
 .finance-cloud__heading p {
@@ -90,6 +91,7 @@
 }
 .finance-cloud__card .big {
   width: 18%;
+  max-width: 4.01em;
   margin: 1em 0 0.6em 0;
 }
 .finance-cloud__card h5,
@@ -176,6 +178,7 @@
 }
 .process__heading img {
   width: 8%;
+  max-width: 1.83em;
   margin: 2em 0 0.6em 0;
 }
 .process__heading p {
@@ -209,6 +212,7 @@
   border: none;
   margin: 0 auto;
   width: 60%;
+  max-width: 12em;
   cursor: pointer;
   color: black;
   font-weight: bold;
@@ -270,6 +274,7 @@ header,
 
 .container {
   width: 80%;
+  max-width: 18.75em;
   margin: 0 auto;
 }
 

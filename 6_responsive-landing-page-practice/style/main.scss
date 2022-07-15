@@ -23,6 +23,8 @@ header,
 
 .container {
   width: 80%;
+  // ! Technically it is responsive without this max width although it can be a bit ugly xd
+  max-width: 18.75em;
   margin: 0 auto;
 }
 
