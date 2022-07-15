@@ -285,3 +285,126 @@ console.log(myDog.bark);
 delete myDog.bark;
 
 //Objects for Lookups
+
+function objectLoopUp(val) {
+  let res = '';
+
+  let lookup = {
+    alpha: 'Adams',
+    bravo: 'Boston',
+    charlie: 'Chicago',
+    delta: 'Denver',
+    echo: 'Easy',
+    foxtrot: 'frank',
+  };
+
+  result = lookup[val];
+  return result;
+}
+
+console.log(objectLoopUp('alpha'));
+
+let myMusic = [
+  {
+    artist: 'Billy Joel',
+    title: 'Piano Man',
+    release_year: 1973,
+    formats: ['CD', '8T', 'LP'],
+    gold: true,
+  },
+  {
+    artist: 'PXNDX',
+    title: 'Narcisista Por Excelencia',
+    release_year: 2006,
+    formats: ['CD', 'Youtube video'],
+    gold: true,
+  },
+];
+
+let formatContent = myMusic[1].formats[1];
+console.log(formatContent);
+
+//Adding a record collection
+
+let collection = {
+  2548: {
+    album: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let it Rock', 'You Give Love a Bad Name'],
+  },
+  2468: {
+    album: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette'],
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: [],
+  },
+  5439: {
+    album: 'ABBA Gold',
+  },
+};
+
+//Fancy way to make a copy of an Object
+let collectionCopy = JSON.parse(JSON.stringify(collection));
+
+function updateRecords(id, prop, value) {
+  if (value === '') {
+    delete collection[id][prop];
+  } else if (prop === 'tracks') {
+    collection[id][prop] = collection[id][prop] || [];
+    collection[id][prop].push(value);
+  } else {
+    collection[id][prop] = value;
+  }
+
+  return collection;
+}
+updateRecords(2468, 'tracks', 'test');
+console.log(updateRecords(5439, 'artist', 'ABBA'));
+
+//-------------
+let whileArray = [];
+let forArray = [];
+
+let i = 0;
+while (i < 11) {
+  whileArray.push(i);
+  i++;
+}
+console.log(whileArray);
+
+//Count backwards with a for loop
+for (let j = 20; j > 0; j -= 5) {
+  forArray.push(j);
+}
+console.log(forArray);
+
+let total = 0;
+for (let i = 0; i < forArray.length; i++) {
+  total += forArray[i];
+}
+console.log(total);
+
+//Nesting loops - Adding Multidimensional arrays
+
+function multiplyAll(arr) {
+  let product = 1;
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; i < arr[i].length; j++) {
+      product *= arr[i][j];
+    }
+  }
+
+  return product;
+}
+
+let product = multiplyAll([
+  [1, 2],
+  [3, 4],
+  [5, 6, 7],
+]);
+
+console.log(product);
