@@ -1,19 +1,36 @@
 .finance-cloud {
   text-align: center;
 
+  img {
+    width: 8%;
+    margin: 2em 0 0.6em 0;
+  }
+
   &__heading {
+    img {
+      width: 8%;
+      margin: 2em 0 0.6em 0;
+    }
+
     p {
       margin: 1em 0;
     }
 
-    & > *:not(p) {
+    & > *:not(p, img) {
       margin-bottom: 2em;
     }
 
     h4 {
       letter-spacing: 5px;
-      border-bottom: 1px solid $blue-dot;
-      // margin-bottom: 1em;
+      border-bottom: 1px solid rgba($blue-dot, 0.3);
+      // &::after {
+      //   content: ' ';
+      //   position: absolute;
+      //   top: 26.5em;
+      //   left: 11.2em;
+      //   width: 12em;
+      //   border-bottom: 1px solid rgba($blue-dot, 0.3);
+      // }
     }
   }
 
@@ -28,9 +45,14 @@
   }
 
   &__card {
-    border: 1px solid $subtitle-gray;
+    border: 1px solid rgba($subtitle-gray, 0.3);
     border-radius: 10px;
     padding: 1em 1em;
+
+    .big {
+      width: 18%;
+      margin: 1em 0 0.6em 0;
+    }
 
     h5,
     p {

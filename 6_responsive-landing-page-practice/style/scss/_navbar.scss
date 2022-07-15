@@ -1,14 +1,37 @@
 .nav {
+  display: flex;
+  align-items: center;
+  padding-top: 1.4em;
+
   &__menu {
+    // flex-grow: 0.95;
+    /* flex-basis: 82%; */
+    /* flex: 1;*/
     display: none;
+    // display: flex;
+    list-style-type: none;
+
+    &__wrapper {
+      display: flex;
+    }
   }
 
   h2 {
     color: $white-text;
     text-align: center;
+    flex-basis: 80%;
   }
 
   span {
     color: $blue-dot;
+  }
+
+  &__menu--hamburger {
+    cursor: pointer;
+    padding-left: 0.5em;
+    width: 10%;
+    height: 10%;
+    max-width: 2.5em;
+    max-height: 2.5em;
   }
 }

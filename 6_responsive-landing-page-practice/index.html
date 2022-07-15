@@ -14,7 +14,11 @@
       <!-- TODO Some way to node use another div, maybe use flexbasis or other property-->
       <!-- ? Is it better to use svg than png for like icons or the hamburger menu -->
       <nav class="nav">
-        <!-- <img src="./img/hamburgermenu.png" alt="Hamburger menu" /> -->
+        <img
+          class="nav__menu--hamburger"
+          src="./img/hamburgermenu.png"
+          alt="Hamburger menu"
+        />
         <h2 class="">every<span>.</span></h2>
         <ul class="nav__menu">
           <div class="nav__menu__wrapper">
@@ -71,7 +75,11 @@
       <article class="finance-cloud">
         <div class="container">
           <section class="finance-cloud__heading">
-            <p>🏛</p>
+            <img
+              class="finance-cloud__img small"
+              src="./img/house.png"
+              alt="Icon house"
+            />
             <h4 class="finance-cloud__subtitle">FINANCE CLOUD</h4>
             <h2 class="finance-cloud__title">
               Banking, Supercharged with a <strong>4% APY</strong>
@@ -79,17 +87,29 @@
           </section>
           <section class="finance-cloud__cards">
             <div class="finance-cloud__card">
-              <p>🏬</p>
+              <img
+                class="finance-cloud__img big"
+                src="./img/construction.png"
+                alt="Icon house"
+              />
               <h5>Bank Accounts (FDIC-Insured)</h5>
               <p>Lorem ipsum dolor sit amet consectetur adip.</p>
             </div>
             <div class="finance-cloud__card">
-              <p>🏬</p>
+              <img
+                class="finance-cloud__img big"
+                src="./img/construction.png"
+                alt="Icon house"
+              />
               <h5>Bill Payments</h5>
               <p>Lorem ipsum dolor sit amet consectetur adip.</p>
             </div>
             <div class="finance-cloud__card">
-              <p>🏬</p>
+              <img
+                class="finance-cloud__img big"
+                src="./img/construction.png"
+                alt="Icon house"
+              />
               <h5>Corporate Cards</h5>
               <p>Lorem ipsum dolor sit amet consectetur adip.</p>
             </div>
@@ -109,6 +129,13 @@
             </div>
             <div class="earnings__input">
               <label for="quantity">Enter how much you will deposit</label>
+              <!-- ! Probably delete this image here -->
+              <i
+                ><img
+                  class="earnings__img"
+                  src="./img/coin.png"
+                  alt="coin icon"
+              /></i>
               <input type="number" id="quantity" placeholder="10,000" />
               <br />
               <!-- TODO Add icon in here -->
@@ -254,7 +281,11 @@
       <article class="process">
         <div class="container">
           <section class="process__heading">
-            <p>⛳</p>
+            <img
+              class="finance-cloud__img small"
+              src="./img/house_white.png"
+              alt="Icon house"
+            />
             <h4 class="process__subtitle">OUR PROGRESS</h4>
             <h2 class="process__title">
               Setup all your Finance and HR operations in
@@ -263,24 +294,30 @@
           </section>
           <section class="process__cards">
             <div class="process__card">
-              <p>🏬</p>
+              <p class="process__number__circle">01</p>
               <h5>Fill out bank application</h5>
               <p>Lorem ipsum dolor sit amet consectetur adip.</p>
             </div>
             <div class="process__card">
-              <p>🏬</p>
+              <p class="process__number__circle">02</p>
               <h5>Get approved</h5>
               <p>Lorem ipsum dolor sit amet consectetur adip.</p>
             </div>
             <div class="process__card">
-              <p>🏬</p>
+              <p class="process__number__circle">03</p>
               <h5>Setup payroll</h5>
               <p>
                 Lorem ipsum dolor sit amet consectetur adip.Lorem ipsum dolor
                 sit amet consectetur adip.
               </p>
             </div>
-            <button class="btn">Open Account ➡</button>
+            <button class="btn">
+              <p>Open Account</p>
+              <img
+                src="./img/circular_arrow_black.png"
+                alt="Circular right arrow "
+              />
+            </button>
           </section>
         </div>
       </article>

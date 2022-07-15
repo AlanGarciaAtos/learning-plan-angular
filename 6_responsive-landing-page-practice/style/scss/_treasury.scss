@@ -1,6 +1,7 @@
 .treasury {
   border-radius: 10px;
   color: $white-text;
+
   .earnings {
     padding: 1em 1.5em 1em 1.5em;
     background-color: $bg-primary;
@@ -19,12 +20,22 @@
     &__input {
       font-weight: bold;
 
+      // ! I honestly think is easier to use flexbox than position, but oh well, probably I will delete this
+      .earnings__img {
+        width: 1.1em;
+        position: relative;
+        top: 2.8em;
+        right: 3em;
+      }
+
       input {
         background-color: $bg-primary;
         border: 1px solid rgba($subtitle-gray, 0.2);
-        padding: 0.8em;
+        padding: 0.8em 0.8em 0.8em 2.8em;
         border-radius: 5px;
         margin-top: 1em;
+        width: 100%;
+        color: $white-text;
       }
 
       button {

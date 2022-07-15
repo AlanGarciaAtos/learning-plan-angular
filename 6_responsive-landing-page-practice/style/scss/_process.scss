@@ -14,11 +14,16 @@
   }
 
   &__heading {
+    img {
+      width: 8%;
+      margin: 2em 0 0.6em 0;
+    }
+
     p {
       margin: 1em 0;
     }
 
-    & > *:not(p) {
+    & > *:not(p, img) {
       margin-bottom: 2em;
     }
 
@@ -44,6 +49,9 @@
     }
 
     button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       background-color: $white-text;
       padding: 0.8em;
       border-radius: 8px;
@@ -53,11 +61,20 @@
       cursor: pointer;
       color: black;
       font-weight: bold;
+
+      img {
+        flex-basis: 0;
+        width: 16%;
+      }
+
+      &:hover {
+        background-color: #c5c5c5;
+      }
     }
   }
 
   &__card {
-    background-color: rgba($subtitle-gray, $alpha: 0.2);
+    background-color: rgba($subtitle-gray, $alpha: 0.3);
     border-radius: 10px;
     padding: 1em;
     margin-right: 1em;
@@ -70,6 +87,20 @@
 
     h5 {
       font-size: 1rem;
+    }
+
+    .process__number__circle {
+      color: black;
+      background-color: $white-text;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 1em auto;
+      padding: 1rem;
+      border-radius: 50%;
+      width: 27%;
+      max-width: 3em;
+      height: 50%;
     }
   }
 }
