@@ -161,7 +161,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // books = [...li]; Didn't work 😔
     books.forEach((book) => {
       const title = book.firstElementChild.textContent;
-      if (title.toLowerCase().indexOf(term) != -1) {
+      const matches = title.toLowerCase().includes(term);
+      if (matches) {
+        //title.toLowerCase().indexOf(term) != -1 Not elegant way
         book.style.display = 'block';
       } else {
         book.style.display = 'none';
