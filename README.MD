@@ -9,6 +9,7 @@
 3. [A guide to how to use CSS & SASS with AIRBNB](https://github.com/airbnb/css)
 4. [A guide to how to use](https://github.com/airbnb/javascript)
 5. git restore and git mergetool
+6. See snowpack bundler
 
 ## We have a ton of activities, let's wrap it up.
 
