@@ -1,0 +1,15 @@
+{
+  "name": "1_rxjs-introduction",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Alan Garcia <test@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "rxjs": "^7.5.6"
+  }
+}
