@@ -50,3 +50,6 @@ devServer: {
 There are hot and cold observables.
 It is in java but the theory I think it can be language agnostic
 https://www.arquitecturajava.com/hot-vs-cold-observable-con-rxjs/
+
+Take multiple js files and combining into a large js file.
+If we want to use a dependency without a bundler, the browser tells they doesn't know where to search.
