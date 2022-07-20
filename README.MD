@@ -11,6 +11,7 @@
 5. git restore and git mergetool
 6. See snowpack bundler
 7. https://nx.dev/
+8. Fix the notes of RxJs and Js bundlers
 
 ## We have a ton of activities, let's wrap it up.
 

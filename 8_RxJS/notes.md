@@ -34,7 +34,7 @@ Links to the webpage for easy installation
 
 This solve my issue in the `webpack.config.js`
 
-````json
+```json
 devServer: {
     static: {
       directory: path.join(__dirname, './'),
@@ -43,7 +43,6 @@ devServer: {
   },
 
 ```
-````
 
 ### Observables
 
