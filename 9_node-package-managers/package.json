@@ -1,0 +1,17 @@
+{
+  "name": "1_npm",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "custom_script": "echo 'This is a custom script'",
+    "start": "echo 'This script is called'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alan Garcia <npmtest@email>",
+  "license": "MIT",
+  "dependencies": {
+    "cowsay": "^1.5.0",
+    "lodash": "^4.17.21"
+  }
+}

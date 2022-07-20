@@ -10,6 +10,7 @@
 4. [A guide to how to use](https://github.com/airbnb/javascript)
 5. git restore and git mergetool
 6. See snowpack bundler
+7. https://nx.dev/
 
 ## We have a ton of activities, let's wrap it up.
 
