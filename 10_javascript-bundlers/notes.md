@@ -11,3 +11,7 @@ We can see this in the entry `webpack.config.js`
 **Rules**: match files to loaders
 **Plugins**: tap into the bundler lifecycle
 **Dev Server**: watch and serve my files (like live server for html,css,js)
+
+## Parcel
+
+Using `autoprefixer` is redundant in the postcss, parcel already transpilates the css by default

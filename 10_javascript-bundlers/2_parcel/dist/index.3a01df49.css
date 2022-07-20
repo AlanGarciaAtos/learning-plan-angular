@@ -1,0 +1,20 @@
+body {
+  background-color: #b86262;
+}
+
+h1 {
+  color: #639;
+  padding-right: 1rem;
+}
+
+#wrap {
+  border: 1px solid #333;
+  border-radius: 4px;
+  place-content: center;
+  align-items: center;
+  padding: 5px;
+  display: flex;
+  box-shadow: 0 10px 10px #0000001f;
+}
+
+/*# sourceMappingURL=index.3a01df49.css.map */
