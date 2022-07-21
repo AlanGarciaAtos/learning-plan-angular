@@ -1,12 +1,16 @@
-function add(n1:number, n2:number, showResult:boolean, resultPhrase:string) {
-  // We can avoid this method using something else with TS
-  // if (typeof n1 !== 'number' || typeof n2 !== 'number') {
-  //   throw new Error("Incorrect input");
-  // }
-  const res = n1 + n2;
-  if(showResult) {
-    console.log(resultPhrase + res);
-  }else {
-    return res;
-  }
+let userInput: unknown; 
+let userName: string;
+
+userInput = 4;
+userInput = 'Max';
+
+if(typeof userInput === 'string') {
+  userName = userInput;
 }
+
+//It's common to use never when throwing an error message
+function generatedError(message:string, code:number):never {
+  throw{message: message, errorCode: code}
+}
+
+generatedError('An error ocurred!', 500)

@@ -15,10 +15,11 @@ Then `npx tsc <file.ts>`
 - Rich in configuration
 - Modern tooling that helps non-typescript projects
 
-Working with Types
-Core syntax & features
+# Working with Types
 
-Core types
+## Core syntax & features
+
+### Core types
 
 - number | 1, 5.4, -10 | All numbers, no difference between floats or int
 - String | 'Hi', "Hi", `Hi` | All text values
@@ -86,6 +87,21 @@ Javascript uses "dynamic types" and typescript uses "static types" (set in devel
 
 To understand what type is the variable or constant
 
+# Intermediate Types
+
+### Union Types
+
+### Literal Types
+
+### Types Aliases
+
+### Function Types and Callbacks
+
+### Unknown Type & Never Type
+
+**Unknown Types**<br>
+It's better if we know in advance, or make use of union types
+
 ## Questions
 
 1. Why is better not naming the objects?
@@ -99,8 +115,8 @@ const person = {
 ```
 
 2. If we don't have a tuple do we don't need to explicit tell?
-
-**Making an interface in TS**
+3. When is a good option to use unknown type?
+   **Making an interface in TS**
 
 ```typescript
 interface User {
