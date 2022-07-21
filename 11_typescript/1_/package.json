@@ -1,0 +1,17 @@
+{
+  "name": "1_",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "start": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Alan Garcia <seyfirdeveloper@gmail.com>",
+  "license": "MIT"
+}
