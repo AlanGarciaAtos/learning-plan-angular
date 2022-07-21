@@ -14,6 +14,7 @@ Then `npx tsc <file.ts>`
 - Decorators (they say it's meta)
 - Rich in configuration
 - Modern tooling that helps non-typescript projects
+- Also tells me when I have the same named function between all my TS files.
 
 # Working with Types
 
@@ -102,6 +103,54 @@ To understand what type is the variable or constant
 **Unknown Types**<br>
 It's better if we know in advance, or make use of union types
 
+# The Typescript Compiler
+
+## Configuring & Using the Typescript Compiler
+
+> NOTE: Bc we don't have TS globally we need to make use of npx. Maybe I need to install Typescript globally
+
+Imagine if we have a project with multiple TS files, it's not an option to do it manually (you can but come on).<br>
+This command come in handy for multiple TS files or your project `tsc --init`. _You only use it once_. No need to use the same command again.
+Then you only write `tsc` to make the TS to JS or if you don't want to use `tsc`, you can write `tsc -w`, so the TS compiled to JS.
+
+**Watch node**
+Starting watch node `tsc app.ts -w` however it will only apply to the specific file.
+
+> **DON'T quit** this watch mode process while developing. You can quit thereafter via **CTRL + C**;
+
+### TS CONFIG
+
+**Include and exclude files**
+
+```json
+"exclude": [
+    "node_modules" //would be the default
+  ],
+  "files": [
+    "app.ts" //In reality you might not use this often
+  ],
+  "include": [
+    "app.ts", //Will only compiled app.ts
+  ]
+```
+
+**Target**
+Tell the tsconfig do compiled the code to certain version of JS `"target": "ES6", `
+
+**lib**
+Technically is the same if we add in target ES6
+
+```json
+"lib": [
+      "DOM",
+      "ES6",
+      "DOM.Iterable",
+      "ScriptHost"
+    ],
+```
+
+(Start at 2:38:00, good video to see about tsconfig.json)[https://www.youtube.com/watch?v=BwuLxPH8IDs]
+
 ## Questions
 
 1. Why is better not naming the objects?
@@ -116,7 +165,9 @@ const person = {
 
 2. If we don't have a tuple do we don't need to explicit tell?
 3. When is a good option to use unknown type?
-   **Making an interface in TS**
+4. Is it better to configure the tsconfig to "es6" or the older version?
+
+**Making an interface in TS**
 
 ```typescript
 interface User {

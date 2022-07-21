@@ -1,3 +1,4 @@
+//Are niche types, but can be useful
 let userInput: unknown; 
 let userName: string;
 
@@ -12,5 +13,5 @@ if(typeof userInput === 'string') {
 function generatedError(message:string, code:number):never {
   throw{message: message, errorCode: code}
 }
-
+//fdf
 generatedError('An error ocurred!', 500)
