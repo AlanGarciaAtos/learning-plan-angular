@@ -92,16 +92,130 @@ To understand what type is the variable or constant
 
 ### Union Types
 
+TypeScript’s type system allows you to build new types out of existing ones using a large variety of operators. Now that we know how to write a few types, it’s time to start combining them in interesting ways
+
+TypeScript allows us to use more than one data type for a variable or a function parameter.
+
+```typescript
+function combine(input1: number | string, input2: number | string) {
+  let res;
+  if (typeof input1 === 'number' && typeof input2 === 'number') {
+    res = +input1 + +input2;
+  } else {
+    res = input1.toString() + input2.toString();
+  }
+  return res;
+}
+const combinedAges = combine(30, 28); //58
+```
+
 ### Literal Types
+
+Literal types are specific strings and numbers in type positions.
+
+We can even combined literal types into unions
+
+```typescript
+function combine(
+  input1: number | string,
+  input2: number | string,
+  resultConversion: 'as-number' | 'as-text'
+) {...}
+const combinedStringAges = combine('30', '26','as-number');
+const combinedStringAges = combine('30', '26','as-nuMbER');// Throw an error it's NOT the same as [as-number]
+```
 
 ### Types Aliases
 
+Type aliases are a way to simplify a long parameter or some variable in an alias (only a name for any type).
+<br>
+It merely for documentation purposes and to make your code more organized and readable.
+
+```typescript
+type Combinable = number | string;
+type ConversionDescriptor = 'as-number' | 'as-text';
+
+function combine(
+  input1: Combinable,
+  input2: number | string,
+  resultConversion: ConversionDescriptor
+) {...}
+nst combinedStringAges = combine('30', '26','as-number')//3026 [bc it's a string]
+```
+
 ### Function Types and Callbacks
+
+**Function Types**
+
+Like other programming languages you can return void in functions. It doesn't return anything. Useful for event listeners or something similar. <br>
+Also you can return number, string, boolean, arrays.
+
+```typescript
+function add(n1: number, n2: number) {
+  return n1 + n2;
+}
+
+function printResult(num: number): void {
+  console.log('Result: ' + num);
+}
+printResult(add(5, 12));
+```
+
+**Function Types in functions**
+
+If we add `combineValues = printResult;` it throw us an error because `let combineValues: (a: number, b: number) => number;` checks if that function have two numbers as arguments and returns a number. `function printResult(){...}`
+
+Allow us to describe which type of function specifically we want to use somewhere be than an expected value in a parameter for create a function with some callback. <br>
+Or like here `let combineValues: (a: number, b: number) => number;` to create a variable.
+
+```typescript
+function add(n1: number, n2: number){...}
+function printResult(num: number){...}
+function addAndHandle(n1: number, n2: number, callback: (num: number) => void) {
+  const result = n1 + n2;
+  callback(result);
+}
+
+let combineValues: (a: number, b: number) => number;
+
+combineValues = add;
+// combineValues = printResult; //Throw errors
+// combineValues = 4;
+console.log(combineValues(8, 8));
+
+// let someValue = undefined;
+
+addAndHandle(10, 20, (result) => {
+  console.log(result);
+});
+```
 
 ### Unknown Type & Never Type
 
+Are niche types, but can be useful
+
+**Never Types**
+It's common to use never when throwing an error message. The function `generatedError` throws actually a never but it says a void.
+
 **Unknown Types**<br>
-It's better if we know in advance, or make use of union types
+It's better if we know in advance, or make use of union types. If you don't know what type is your variable write _unknown_ BUT it's better than _any_
+
+```typescript
+let userInput: unknown;
+let userName: string;
+
+userInput = 4;
+userInput = 'Max';
+
+if (typeof userInput === 'string') {
+  userName = userInput;
+}
+
+function generatedError(message: string, code: number): never {
+  throw { message: message, errorCode: code };
+}
+generatedError('An error ocurred!', 500);
+```
 
 # The Typescript Compiler
 

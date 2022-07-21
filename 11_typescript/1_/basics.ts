@@ -11,8 +11,6 @@ function add_1(n1:number, n2:number, showResult:boolean, resultPhrase:string) {
   }
 }
 
-//testsss
-
 let result: number;
 result = 4;
 const number1 = 5;

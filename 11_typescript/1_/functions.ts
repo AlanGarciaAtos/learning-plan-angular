@@ -14,8 +14,6 @@ function addAndHandle(n1:number, n2:number, cb: (num:number) => void) {
 
 let combineValues: (a:number,b:number) => number;
 
-//testsss
-
 combineValues = add;
 // combineValues = printResult;
 // combineValues = 4;
