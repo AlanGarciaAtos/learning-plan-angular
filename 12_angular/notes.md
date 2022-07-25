@@ -22,3 +22,8 @@ Angular uses components to build web pages and uses modules to basically bundle 
 ### Lesson I need to see again (probably)
 
 1- 16_How an Angular App gets Loaded and Started. See where all the imports and how files are connected
+2- 62_Understanding Angular Error Messages and 63
+
+### Current lesson
+
+Lesson 22
