@@ -136,7 +136,7 @@ There also an else for ngIf see the code below
 </p>
 ```
 
-4- ngFor (struc dir) Renders a template for each item in a collection. The directive is placed on an element, which becomes the parent of the cloned templates.
+4- ngFor (struc dir) Renders a template for each item in a collection. The directive is placed on an element, which becomes the parent of the cloned templates. _Lesson 42_
 
 ```hmtl
 <app-server *ngFor="let server of servers"></app-server>
@@ -146,6 +146,7 @@ There also an else for ngIf see the code below
 ### Lesson I need to see again (probably)
 
 1- 16_How an Angular App gets Loaded and Started. See where all the imports and how files are connected
+4- 46_Planning the app
 2- 62_Understanding Angular Error Messages and 63
 3- Make the homeworks(HW 1, HW 2, HW 3 and lesson 44 )
 
