@@ -12,6 +12,8 @@
 6. See snowpack bundler
 7. https://nx.dev/
 8. Fix the notes of RxJs and Js bundlers
+9. https://azure.microsoft.com/en-us/services/devops/ , https://dev.azure.com/
+10. nx workspaces , https://angular.io/cli
 
 ## We have a ton of activities, let's wrap it up.
 
