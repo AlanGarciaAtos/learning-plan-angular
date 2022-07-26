@@ -158,3 +158,5 @@ Lesson 22
 
 1- When is a good reason to use `styles: []` (inline style) than `stylesUrl`
 2- When is a good reason to make use of different selector
+3- Life cycle of a component
+4- Experimental support for decorators is a feature that is subject to change in a future relasease (when manually creating a component)
