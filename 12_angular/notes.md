@@ -152,7 +152,7 @@ There also an else for ngIf see the code below
 
 ### Current lesson
 
-Lesson 22
+Lesson 49 - Project course
 
 ### Questions
 
