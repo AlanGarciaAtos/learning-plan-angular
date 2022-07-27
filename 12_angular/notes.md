@@ -103,6 +103,14 @@ onCreateServer() {
 ## Directives
 
 Directives are instructions in the DOM. (Components are also directives)
+
+Structural directives
+1- Look like a normal HTML Attribute but have a leading \* (for desugaring)
+2- Affect a whole area in the DOM (elements get added/ removed)
+
+Attribute directive
+1- Look like a normal HTML Attribute (possibly with databinding or event binding)
+2- Only affect/ change the element they are added to.  
 Unlike Structural directives, **attribute directives** don't add or remove elements. Only change the element they were placed on.
 
 1- ngIf (struc dir) Changes our structure of our DOM (either adds the element or doesn't add). It's note hidden it's NOT there.
