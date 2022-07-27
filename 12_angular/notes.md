@@ -1,5 +1,7 @@
 # Angular
 
+Angular - The Complete Guide (2022 Edition) - Maximilian
+
 ## Angular Basics
 
 Angular is a javascript framework which allows you to create reactive **Single-Page-Applications(SPA)**
@@ -296,6 +298,38 @@ With \*
 In the HTML `<div *appUnless="onlyOdd">...</div>`, needs to be the specific name you create in custom structural directive.
 
 ## Services & Dependency Injection
+
+Services:
+
+A good way to don't repeat your code and keep it clean.
+
+Well a dependency is something a class of ours will depend on, for example the new account component depends on the loggingService because we want to call a method in that service and the dependency injector simply injects this dependency, injects an instance of this class into our component automatically.
+
+This is not a good way to instantiate our service.
+
+```ts
+import { LoggingService } from '../logging.service';
+const service = new LoggingService();
+service.logStatusChange(accountStatus);
+```
+
+Better to way to do it.
+To tell Angular you add a service, add this below the @Component `providers: [LoggingService]`
+
+```ts
+constructor(private loggingService: LoggingService) {...}
+```
+
+**Creating a data service**
+Lesson 109
+
+**Hierarchical Injector**
+
+1- **AppModule:** Same Instance of Service is available Application-wide
+2- **AppComponent:** Same Instance of Service is available for all Components(but not for
+other Services)
+3- **Any other Component:** Same Instance of Service is available for the Component and all its
+child components
 
 ### Components
 
