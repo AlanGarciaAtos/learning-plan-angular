@@ -151,6 +151,150 @@ There also an else for ngIf see the code below
 
 ```
 
+Finally there is the `ngSwitch` which can be useful when having a lot of if/else statements, although the most common one are ngFor and ngIf. Hey it can be useful `ngSwitch`!
+
+```ts
+
+<div [ngSwitch]="value">
+        <p *ngSwitchCase="5">Value is 5</p>
+        <p *ngSwitchCase="10">Value is 10</p>
+        <p *ngSwitchCase="100">Value is 100</p>
+        <p *ngSwitchDefault>Value is Default</p>
+      </div>
+
+```
+
+**Create our custom Basic attribute directive and Better attrivute directive**
+
+Angular is not limited to running in the browser here, it for example also works with service workers and these are environments where you might not have access to the DOM.
+
+Now to be honest, in most circumstances you probably don't and you probably also know if your app is going to run in the browser or not, still it is a better practice to use the renderer for DOM access and to use the methods the renderer provides to access the DOM.
+
+Above the export
+
+```ts
+@Directive({
+  selector: '[placeholder-name]'
+})
+
+```
+
+Basic
+
+```ts
+constructor(private elementRef: ElementRef) {
+
+  }
+
+  ngOnInit(): void {
+    this.elementRef.nativeElement.style.backgroundColor = 'green';
+  }
+
+```
+
+Better
+(Documentation for Renderer2)[https://angular.io/api/core/Renderer2]
+
+```ts
+  constructor(private elRef: ElementRef, private renderer: Renderer2) { }
+
+  ngOnInit(): void {
+
+    this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue')
+  }
+```
+
+**HoistListener**
+Can react to any events
+Decorator that declares a DOM event to listen for, and provides a handler method to run when that event occurs.
+
+**HostBinding**
+@HostListener and @HostBinding, a great way for working with the element inside of a directive. <br>
+
+And of course here on `@HostBinding`, you can bind to any property of the element you are sitting on.
+
+In this it's easier to use `HoistBinding` because we're changing a background color
+
+```ts
+@HostBinding('style.backgroundColor') backgroundColor: string = 'transparent';
+
+@HostListener('mouseenter') mouseover(eventData: Event) {
+  this.backgroundColor = 'blue'
+}
+```
+
+### Binding to directive properties & Create directive
+
+Also create structural directive
+
+We can even create our own attribute directive
+`@Input('appBetterHighlight') hightlightColor: string = 'blue';`
+
+`<p [defaultColor]="'yellow'">Style me with a better directive</p>`
+
+THis two are the same, uses property binding, so be careful with this.
+`<p defaultColor="yellow">Style me with a better directive</p>`
+
+**Behind scenes in structural directive**
+
+ng-template is an element which itself is not rendered but which allows us to define a template in the end for Angular to use once it determines that this template, some element needs to be rendered because this condition is true in this case.
+
+The symbol \* is an easy to not use all the ng-template, an easier to write `ngIf` or `ngFor`
+
+No \*
+
+```ts
+<ng-template [ngIf]="!onlyOdd">
+        <div>
+          <li
+            class="list-group-item"
+            [ngClass]="{ odd: even % 2 !== 0 }"
+            [ngStyle]="{
+              backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'
+            }"
+            *ngFor="let even of evenNumbers"
+          >
+            {{ even }}
+          </li>
+        </div>
+      </ng-template>
+
+```
+
+With \*
+
+```ts
+<div *ngIf="!onlyOdd">
+        <li
+          class="list-group-item"
+          [ngClass]="{ odd: even % 2 !== 0 }"
+          [ngStyle]="{
+            backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'
+          }"
+          *ngFor="let even of evenNumbers"
+        >
+          {{ even }}
+        </li>
+      </div>
+
+```
+
+**Creating a custom structural directive**
+
+```ts
+@Input() set appUnless(condition: boolean) {
+    if (!condition) {
+      this.vcRef.createEmbeddedView(this.templateRef);
+    } else {
+      this.vcRef.clear();
+    }
+  }
+
+  constructor(private templateRef: TemplateRef<any>, private vcRef: ViewContainerRef) { }
+```
+
+In the HTML `<div *appUnless="onlyOdd">...</div>`, needs to be the specific name you create in custom structural directive.
+
 ### Components
 
 We can even share or get data within the components
@@ -241,6 +385,8 @@ Section 3 (Lesson 49 - Project course ) pending and section 6
 3- _Life cycle of a component (this is my homework xd)_
 4- Experimental support for decorators is a feature that is subject to change in a future relasease (when manually creating a component)
 5- ng-content is a hook??? Why maximilian called a hook, a typo?
+6- Service workers and he said better approach the renderer than accessing the DOM
+
 9- bleedout term in angular????
 
 ### Coso de CLI que es
