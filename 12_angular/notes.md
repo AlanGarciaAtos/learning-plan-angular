@@ -446,7 +446,39 @@ A way to change what the user sees by showing and hiding some specific webpage c
 
 Angular ships with its own router which allows you to change the URL in the URL bar and still only use one page but then exchange major parts or a lot of parts of that page, so that to the user, it really looks like a new page was loaded because maybe only the header is the same but behind the scenes, it is still Javascript changing a lot of parts in your DOM, in your page, making it look like a new page was rendered but you're still in the Angular world in your single page application.
 
-0:30
+_Adding the routes_
+
+```ts
+const appRoutes: Routes = [{ path: 'users', component: UsersComponent }];
+```
+
+_Adding the imports to get the routes_
+
+```ts
+@NgModule({
+  declarations: [...],
+  imports: [
+    RouterModule.forRoot(appRoutes)
+  ],
+  providers: [ServersService],bootstrap: [AppComponent]
+})
+```
+
+_Adding the components in html_
+In our HTML we need to add `<router-outlet>` to get html, however we still need to connect the other pages.
+
+`<router-outlet></router-outlet>`
+
+Apparently there are different ways to route different pages in Angular. The name we already define it in the `app.module.ts`.
+_Works too without the / apparently_
+
+```html
+<a routerLink="/">Home</a>
+<a routerLink="/servers">Servers</a>
+<a [routerLink]="['/users']">Users</a>
+```
+
+Absolute paths with a slash at the beginning which will always get appended to the root domain, relative paths without a slash or with ./ which means added to the currently loaded path or ../ and you can even add more of them to say well go back ones path, go back another path.
 
 ### Lesson I need to see again (probably)
 
@@ -472,6 +504,8 @@ Section 3 (Lesson 49 - Project course ) pending and section 6 and section 10
 6- Service workers and he said better approach the renderer than accessing the DOM
 7- Al utilizar @Injectable se tiene que usar en todos los "services", versiones anteriores no necesitaban pero ahora es buena practica o es obligatorio
 8- Different way of injecting a service (Line 359 - 370?)
+9- Why there are Routes and Route?
+
 9- bleedout term in angular????
 
 ### Coso de CLI que es
