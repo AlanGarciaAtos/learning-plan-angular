@@ -440,6 +440,14 @@ A nice feature, especially if you think about building re-usable widgets, like a
 
 **ngOnDestroy:** Called once the component is about to be destroyed
 
+## Routing
+
+A way to change what the user sees by showing and hiding some specific webpage contents, rather than going out to the server to get a new page.
+
+Angular ships with its own router which allows you to change the URL in the URL bar and still only use one page but then exchange major parts or a lot of parts of that page, so that to the user, it really looks like a new page was loaded because maybe only the header is the same but behind the scenes, it is still Javascript changing a lot of parts in your DOM, in your page, making it look like a new page was rendered but you're still in the Angular world in your single page application.
+
+0:30
+
 ### Lesson I need to see again (probably)
 
 1- 16_How an Angular App gets Loaded and Started. See where all the imports and how files are connected
@@ -452,7 +460,7 @@ A nice feature, especially if you think about building re-usable widgets, like a
 
 ### Current lesson
 
-Section 3 (Lesson 49 - Project course ) pending and section 6
+Section 3 (Lesson 49 - Project course ) pending and section 6 and section 10
 
 ### Questions
 
