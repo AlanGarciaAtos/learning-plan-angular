@@ -299,9 +299,9 @@ In the HTML `<div *appUnless="onlyOdd">...</div>`, needs to be the specific name
 
 ## Services & Dependency Injection
 
-Services:
+Services: just another piece in your Angular app, another class you can add which acts as a central repository, as a central business unit you could say, something where you can store, where you can centralize your code in.
 
-A good way to don't repeat your code and keep it clean.
+A good way to don't repeat your code and keep it clean. Also don't make use a lot of Input and Output.
 
 Well a dependency is something a class of ours will depend on, for example the new account component depends on the loggingService because we want to call a method in that service and the dependency injector simply injects this dependency, injects an instance of this class into our component automatically.
 
@@ -330,6 +330,46 @@ Lesson 109
 other Services)
 3- **Any other Component:** Same Instance of Service is available for the Component and all its
 child components
+
+Be careful when you're using the providers `providers: [LoggingService, AccountsService]`
+Now we're using one and the same, before we weren't. Both may be the behavior you want in your app but make sure that you get the correct one.
+
+Don't remove it form the constructor only in the array providers
+
+### Different Way Of Injecting Services
+
+Instead of adding a service class to the providers[] array in AppModule , you can set the following config in `@Injectable()`:
+
+```ts
+@Injectable({providedIn: 'root'})
+export class MyService { ... }
+```
+
+This is exactly the same as:
+
+`export class MyService { ... }`
+and
+
+```ts
+import { MyService } from './path/to/my.service';
+
+@NgModule({
+    ...
+    providers: [MyService]
+})
+export class AppModule { ... }
+```
+
+Using this syntax is completely optional, the traditional syntax (using `providers[]` ) will also work.
+
+The "new syntax" does offer one advantage though: Services can be loaded lazily by Angular (behind the scenes) and redundant code can be removed automatically. This can lead to a better performance and loading speed - though this really only kicks in for bigger services and apps in general.
+
+### Injecting services into services
+
+Make sure to add it in to the `app.module.js`
+
+Communicating between components through a service which really can save you a lot of time- <br>
+Make sure to use the right amount of instances and if you inject services into services, make sure to provide the service on the app module level and to add @injectable to a service where you want to inject it in.
 
 ### Components
 
@@ -422,7 +462,8 @@ Section 3 (Lesson 49 - Project course ) pending and section 6
 4- Experimental support for decorators is a feature that is subject to change in a future relasease (when manually creating a component)
 5- ng-content is a hook??? Why maximilian called a hook, a typo?
 6- Service workers and he said better approach the renderer than accessing the DOM
-
+7- Al utilizar @Injectable se tiene que usar en todos los "services", versiones anteriores no necesitaban pero ahora es buena practica o es obligatorio
+8- Different way of injecting a service (Line 359 - 370?)
 9- bleedout term in angular????
 
 ### Coso de CLI que es
