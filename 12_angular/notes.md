@@ -143,20 +143,109 @@ There also an else for ngIf see the code below
 
 ```
 
+### Components
+
+We can even share or get data within the components
+
+The default of custom properties in components it's not expose to the project, although we can make of @Input to make it "public" and use it in other components outside of the parent.
+
+We can assign aliases to custom properties `@Input('srvElement')` but you need to change the `[element]` to the aliases you add `<app-server-element [srvElement]="serverElement"></app-server-element>`
+
+There will be some cases which the communication of some components are great (or next to each other) that you don't need to build a chain of input and output.
+
+### Encapsulation
+
+Have the goal of encapsulating styles for the component they belong to. So it doesn't make it global. Is not default behavior, angular does it.
+
+We can make sure that whichever styles we define in a CSS file will only get applied to the component they belong to.
+
+### Local references
+
+A local reference can be placed on any HTML element,
+Use data from one part of a template in another part of the template. Use template variables to perform tasks such as respond to user input or finely tune your application's forms.
+With this we don't need to use two way binding.
+
+So local references, a very nice feature to get access to some elements in your template and then use that either directly in the template <br>
+
+You could also output `serverNameInput` value here or you can pass it on, like we do to use it in the TypeScript
+
+### View Child & Content Child
+
+The same change (add `{ static: true }` as a second argument) needs to be applied to ALL usages of `@ViewChild()` (and also `@ContentChild()` which you'll learn about later) IF you plan on accessing the selected element inside of `ngOnInit()`.
+
+If you DON'T access the selected element in ngOnInit (but anywhere else in your component), set static: false instead!
+
+If you're using Angular 9+, you only need to add `{ static: true }` (if needed) but not `{ static: false }`.
+
+This is a bad practice, a bad way to access the DOM.
+` this.serverContentInput.nativeElement.value = 'Something';`
+
+**Content child**
+Use to get the first element or the directive matching the selector from the content DOM. If the content DOM changes, and a new child matches the selector, the property will be updated.
+
+### Ng-Content
+
+A nice feature, especially if you think about building re-usable widgets, like a tab widget where each tab will have a content which probably comes from some other source and which you don't want to pass through property binding which always would be an alternative but if it's more complex HTML code, property binding really is not the best solution because Angular will escape HTML tags there to prevent cross-site scripting attacks from happening and you could kind of work around that but really, ng-content then is how you want to display this and that is a great tool to have at your disposal.
+
+### Life Cycle
+
+**ngOnChanges:** Called afterabound input property changes
+<br>
+
+**ngOnInit:** Called once the component is initialized
+<br>
+
+**ng DoCheck:** Called during every change detection run
+<br>
+
+**ngAfterContentInit:** Called after content(ng-content)has been projected into view
+<br>
+
+**ngAfterContentChecked:** Called every time the projected content has been checked
+<br>
+
+**ngAfterViewInit:** Called after the component's view(and child views)has been initialized
+<br>
+
+**ngAfterViewChecked:** Called every time the view(and child views)have been checked
+<br>
+
+**ngOnDestroy:** Called once the component is about to be destroyed
+
 ### Lesson I need to see again (probably)
 
 1- 16_How an Angular App gets Loaded and Started. See where all the imports and how files are connected
-4- 46_Planning the app
-2- 62_Understanding Angular Error Messages and 63
-3- Make the homeworks(HW 1, HW 2, HW 3 and lesson 44 )
+2- 46_Planning the app
+3- 62_Understanding Angular Error Messages and 63
+4- Make the homeworks(HW 1, HW 2, HW 3 and lesson 44 )
+5- Reproducir
+6- 76_Getting Access to the Template & DOM with @ViewChild
+7- 78_Understanding the Component Lifecycle
 
 ### Current lesson
 
-Lesson 49 - Project course
+Section 3 (Lesson 49 - Project course ) pending and section 6
 
 ### Questions
 
 1- When is a good reason to use `styles: []` (inline style) than `stylesUrl`
 2- When is a good reason to make use of different selector
-3- Life cycle of a component
+3- _Life cycle of a component (this is my homework xd)_
 4- Experimental support for decorators is a feature that is subject to change in a future relasease (when manually creating a component)
+5- ng-content is a hook??? Why maximilian called a hook, a typo?
+9- bleedout term in angular????
+
+### Coso de CLI que es
+
+Es una interface de linea de comandos que nos permite inicializar, desarrollar, scaffolding (hacer cimientos) y mantener las aplicaciones de angular directamente en la terminal. Gracias a esto nos permite automatizar tareas que tendriamos que hacer manualmente.
+
+Es un programa que se instala en tu equipo, lo instalas con npm o yarn por eso lo pones -g para que puedas utilizarlo cuando quieras. Se tiene que tener instalado nodejs porque angularCLI corre sobre nodejs
+
+Un comando es ng new, le dices a angularcli que quieres un proyecto de angular.
+
+Un schematic es una plantilla que genera codigo y que soporta logica compleja. Ejemplo: agregar autentificacion a to app de angular.
+
+A veces pasa que tienes diferentes versiones de angular, por ejemplo tienes instalada la version 14.0.0 global pero un proyecto de legado tiene la 7.0.0.
+
+**Realmente esto ya es viejo, angular solito te lo pone el puerto**
+Tendras que cambiar de version de node con nvm, ademas que puede ocurrir que el puerto ya esta ocupado por la version que ya tienes de angular, asi que tendrias que cambiar el puerto. `ng serve --port 4002 `
