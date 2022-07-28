@@ -589,8 +589,11 @@ Adding `pure: false` whenever we change data on the page, our pipe is recalculat
 
 It recognizes that this is a promise and as a side note, it would also work with observables, there it would subscribe automatically and after two seconds, it will simply recognize that something changed, that the promise resolved or in the case of an observable, that data was sent through the subscription and it will print this data to the screen
 
+With pipes the variable is also a parameter.
+
 This will get the date without all the zeros and it will make uppercase the letters.
 `{{ server.started | date: "fullDate" | uppercase }`
+**\_**1 parameter**\_\_\_**2parameter**\_\_\_**3 parameter
 
 It is important how you added them, in this case it throws us an error because uppercase tries to transform a Date not a string. <br>
 This code first give us a Date, the fullDate transform it into a string.
@@ -608,6 +611,29 @@ Add the : to add multiple parameters (if they have).
 `{{ server.started | uppercase | shorten: 15: 31"}`
 
 ## Forms
+
+Because we're building a SPA we don't have a server so we need the help of angular.
+
+You will reach Angular HTTP
+1- Get the values of the user
+2- Check form is valid
+3- Conditionally change the form (add red border if wrong)
+
+### Why we need Angular help?
+
+Allows you or it gives you actually such a Javascript object representation of your form, making it simple for you to retrieve user values and to see the state of the form and to work with it.
+
+### Template-Driven vs Reactive Approach
+
+**Template-Driven**
+_TDLR:_ Angular infers the Form Object from the DOM
+<br>
+You simply set up your form in the template, in HTML code and Angular will automatically infer the structure of your form, will infer which controls your forms has, which inputs and makes it easy for you to get started quickly.
+
+**Reactive Approach**
+_TDLR:_ Form is created programatically and synchronized with the DOM.
+<br>
+You actually define the structure of the form in TypeScript code, you also set up the HTML code and then you manually connect it which might sound more complicated than it is in the end and therefore, it gives you greater control over it, you can fine tune every little piece about your form.
 
 ### Lesson I need to see again (probably)
 
