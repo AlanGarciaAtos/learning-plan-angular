@@ -515,6 +515,69 @@ const appRoutes: Routes = [{ path: 'users/:id', component: UserComponent }];
 
 Without the : angular would think it's a specific routem in this "id", literally he string.
 
+To avoid confusion: The `ActivatedRoute` object we injected will give us access to the id passed in the URL => Selected User
+
+> When using observables in angular, the framework removed tha one that we're not using, however if we're using our custom observables. We need to unsuscribe.
+
+### Child Routing
+
+You can child routing, or have a little bit more organized using the routes to appea it in the same template. You need to add `router-outlet` in the template
+
+```ts
+{
+    path: 'servers', component: ServersComponent, children: [
+      { path: ':id', component: ServerComponent },
+      { path: ':id/edit', component: EditServerComponent }
+    ]
+  },
+```
+
+### Redirect to not found pages
+
+Make sure to add the wildcard the LAST because if you add first it will not found any route.
+
+```ts
+  { path: 'not-found', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '/not-found' }
+```
+
+### Redirection Path Matching
+
+By default, Angular matches paths by prefix. That means, that the following route will match both /recipes and just /
+
+{ path: '', redirectTo: '/somewhere-else' }
+
+Actually, Angular will give you an error here, because that's a common gotcha: This route will now ALWAYS redirect you! Why?
+
+Since the default matching strategy is "prefix" , Angular checks if the path you entered in the URL does start with the path specified in the route. Of course every path starts with '' (Important: That's no whitespace, it's simply "nothing").
+
+To fix this behavior, you need to change the matching strategy to "full" :
+
+`{ path: '', redirectTo: '/somewhere-else', pathMatch: 'full' } `
+
+Now, you only get redirected, if the full path is '' (so only if you got NO other content in your path in this example).
+
+## Route guard
+
+So basically functionality, logic, code which is executed before a route is loaded or once you want to leave a route.
+
+`canActivate`, his neighbor `canActivateChild`, finally `canDeactivate` guards
+
+### Protecting child (nested) routes
+
+Now we get redirected back because now only the child routes are protected. So now this is the finegrained control you can implement to protect a whole route and all its child routes or just the child routes, depending on which behavior you need in your app.
+
+`canActivateChild: [AuthGuard],`
+
+### Location strategies
+
+In older browsers you may need to use useHash to access the route because the server parsed the url in the client.
+<br>
+There is another way more elegant later in the course
+
+`RouterModule.forRoot(appRoutes, {useHash: true})`
+`RouterModule.forRoot(appRoutes)`
+
 ### Lesson I need to see again (probably)
 
 1- 16_How an Angular App gets Loaded and Started. See where all the imports and how files are connected
@@ -535,13 +598,15 @@ Section 10
 2- When is a good reason to make use of different selector
 3- _Life cycle of a component (this is my homework xd)_
 4- Experimental support for decorators is a feature that is subject to change in a future relasease (when manually creating a component)
-5- ng-content is a hook??? Why maximilian called a hook, a typo?
+
+<!-- 5- ng-content is a hook??? Why maximilian called a hook, a typo? -->
+
 6- Service workers and he said better approach the renderer than accessing the DOM
 7- Al utilizar @Injectable se tiene que usar en todos los "services", versiones anteriores no necesitaban pero ahora es buena practica o es obligatorio
 8- Different way of injecting a service (Line 359 - 370?)
 9- Why there are Routes and Route?
 
-9- bleedout term in angular????
+14- bleedout term in angular????
 
 ### Coso de CLI que es
 
