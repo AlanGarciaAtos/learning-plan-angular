@@ -19,7 +19,7 @@ export class ServerComponent implements OnInit {
     this.route.data
       .subscribe(
         (data: Data) => {
-          this.server = data['server']
+          this.server = data['server'];
         }
       );
 
