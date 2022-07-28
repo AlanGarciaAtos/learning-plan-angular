@@ -582,6 +582,33 @@ There is another way more elegant later in the course
 
 Allows you to transform output (transforming values) in your template.
 
+While using pipes updating arrays or objects doens't trigger it.
+Adding `pure: false` whenever we change data on the page, our pipe is recalculated you could say.
+
+**Async pipe** subscribes to an Observable or Promise and returns the latest value it has emitted. When a new value is emitted, the async pipe marks the component to be checked for changes.
+
+It recognizes that this is a promise and as a side note, it would also work with observables, there it would subscribe automatically and after two seconds, it will simply recognize that something changed, that the promise resolved or in the case of an observable, that data was sent through the subscription and it will print this data to the screen
+
+This will get the date without all the zeros and it will make uppercase the letters.
+`{{ server.started | date: "fullDate" | uppercase }`
+
+It is important how you added them, in this case it throws us an error because uppercase tries to transform a Date not a string. <br>
+This code first give us a Date, the fullDate transform it into a string.
+`{{ server.started | uppercase | date: "fullDate"}`
+
+### Creating our custom pipe
+
+1- Create a file `<name>.pipe.ts`, add decorator Pipe with a name.
+2- Implement `PipeTransform`,also add transform inside the class add your logic/code
+3- Add it in the template and `app.module.ts`
+**Bonus:** If you wanto to add parameters in your custom pipe just add another parameter in the `transform` method.
+
+Also you can add parameters to your custom pipes or use the ones that has paramaters.
+Add the : to add multiple parameters (if they have).
+`{{ server.started | uppercase | shorten: 15: 31"}`
+
+## Forms
+
 ### Lesson I need to see again (probably)
 
 1- 16_How an Angular App gets Loaded and Started. See where all the imports and how files are connected
@@ -595,6 +622,8 @@ Allows you to transform output (transforming values) in your template.
 ### Current lesson
 
 Course project: Section 10 and section 12
+Make the exercise to reinforce the knowledge.
+**_C'mon you got this!!!_**
 
 ### Questions
 
