@@ -578,6 +578,10 @@ There is another way more elegant later in the course
 `RouterModule.forRoot(appRoutes, {useHash: true})`
 `RouterModule.forRoot(appRoutes)`
 
+## Pipes
+
+Allows you to transform output (transforming values) in your template.
+
 ### Lesson I need to see again (probably)
 
 1- 16_How an Angular App gets Loaded and Started. See where all the imports and how files are connected
@@ -590,7 +594,7 @@ There is another way more elegant later in the course
 
 ### Current lesson
 
-Section 10
+Course project: Section 10 and section 12
 
 ### Questions
 
