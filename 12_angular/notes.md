@@ -527,7 +527,7 @@ Without the : angular would think it's a specific routem in this "id", literally
 
 ### Current lesson
 
-Section 3 (Lesson 49 - Project course ) pending and section 6 , section 8 and section 10
+Section 10
 
 ### Questions
 

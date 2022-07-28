@@ -1,12 +1,12 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Old version simple without hamburger menu -->
-    <!-- <div class="navbar-header">
+    <div class="navbar-header">
       <a href="#" class="navbar-brand">Recipe Book</a>
-    </div> -->
+    </div>
 
     <!-- New version with hamburger menu, if this doesn't work xd -->
-    <div class="navbar-header">
+    <!-- <div class="navbar-header">
       <button
         type="button"
         class="navbar-toggle"
@@ -15,20 +15,22 @@
         <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
       </button>
       <a routerLink="/" class="navbar-brand">Recipe Book</a>
-    </div>
+    </div> -->
 
-    <div
-      class="navbar-collapse"
-      [class.collapse]="collapsed"
-      (window:resize)="collapsed = true"
-    >
+    <!-- Add this in div navbar-collapse are attributes -->
+    <!-- [class.collapse]="collapsed"
+      (window:resize)="collapsed = true" -->
+
+    <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#">Recipes</a></li>
-        <li><a href="#">Shopping List</a></li>
+        <li><a href="#" (click)="onSelect('recipe')">Recipes</a></li>
+        <li>
+          <a href="#" (click)="onSelect('shopping-list')">Shopping List</a>
+        </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
+        <li class="dropdown" appDropdown>
           <a href="#" class="dropdown-toggle" role="button"
             >Manage <span class="caret"></span
           ></a>
