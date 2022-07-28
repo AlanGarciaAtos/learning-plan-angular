@@ -480,6 +480,41 @@ _Works too without the / apparently_
 
 Absolute paths with a slash at the beginning which will always get appended to the root domain, relative paths without a slash or with ./ which means added to the currently loaded path or ../ and you can even add more of them to say well go back ones path, go back another path.
 
+### Styling active router links
+
+In the `routerLinkActive="active"` the active is a custom class of css or bootstrap if you have it.`[routerLinkActiveOptions]="{ exact: true }"` this tell angular to remove the style if the full path is whatever the links leads to.
+
+```html
+<li
+  role="presentation"
+  routerLinkActive="active"
+  [routerLinkActiveOptions]="{ exact: true }"
+>
+  <a routerLink="/">Home</a>
+</li>
+
+<li role="presentation" routerLinkActive="active">
+  <a routerLink="/servers">Servers</a>
+</li>
+```
+
+### Relative paths in programmatic navigation
+
+Because unlike the routerLink, the navigate method doesn't know on which route you are currently on, so to say. The routerLink always knows in which component it sits, in which components template and therefore it knows what the currently loaded route is.
+
+**Activate route**
+Now ActivatedRoute like the name implies simply injects the currently active routes, so for the component you loaded, this will be the route which loaded this component and the route simply is kind of a complex Javascript object which keeps a lot of meta information about the currently active route.
+
+### Passing Parameters to routes (Dynamically load)
+
+Adding the : tells angular that is a dynamic route,retrieve the parameter inside hte loaded component by the name you specify here.
+
+```ts
+const appRoutes: Routes = [{ path: 'users/:id', component: UserComponent }];
+```
+
+Without the : angular would think it's a specific routem in this "id", literally he string.
+
 ### Lesson I need to see again (probably)
 
 1- 16_How an Angular App gets Loaded and Started. See where all the imports and how files are connected
@@ -492,7 +527,7 @@ Absolute paths with a slash at the beginning which will always get appended to t
 
 ### Current lesson
 
-Section 3 (Lesson 49 - Project course ) pending and section 6 and section 10
+Section 3 (Lesson 49 - Project course ) pending and section 6 , section 8 and section 10
 
 ### Questions
 
