@@ -812,6 +812,47 @@ this.signupForm.patchValue({
 });
 ```
 
+## Http Requests
+
+You don't connect Angular to a database directly.
+
+You don't enter your database credentials into your Angular app or anything like that.<br>
+Highly insecure because everyone can read your Angular code since it's a front-end Javascript
+
+We send HTTP request and get HTTP responses from the server. A server in the end is defined an API here.
+We get data in a json format not html
+
+### Anatomy of Http Requests
+
+1- **URL (API Endpoint):** the exact path here of course depends on the API you're interacting with. Ex: domain.com/users/name/1
+
+2- **Http verb:** Defines which request we want to do
+
+- Want to fetch data?
+- Want to replace existing data?
+- Want to store new data?
+
+While using an API you need to go to the docs, or if you're creating one you need to know their uses.
+
+> POST, GET, PUT, DELETE, PATCH
+
+3- **Headers (Metadata):** Kind of optional or to be precise, some default headers will be appended to a request for you by the browser and by Angular but you can also append your own headers and that is therefore also something we'll have a look at.
+
+`{"Content-Type":"aaplication/json"}`
+
+4- **Body:** Some verbs may use a body, that's the core data that is attached to a request.
+<br>
+
+Can be set on _POST_ , _PUT_ & _PATCH_ which are requests that do alter data on the server. (adding or replacing it).
+
+<br>
+
+- Single-resource bodies, consisting of one single file, defined by the two headers: Content-Type and Content-Length.
+- Multiple-resource bodies, consisting of a multipart body, each containing a different bit of information. This is typically associated with HTML Forms.
+  (Image)[https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages/http_request_headers3.png]
+
+### dsadsad
+
 ### Lesson I need to see again (probably)
 
 1- 16_How an Angular App gets Loaded and Started. See where all the imports and how files are connected
