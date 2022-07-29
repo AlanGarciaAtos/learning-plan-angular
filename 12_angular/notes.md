@@ -630,6 +630,126 @@ _TDLR:_ Angular infers the Form Object from the DOM
 <br>
 You simply set up your form in the template, in HTML code and Angular will automatically infer the structure of your form, will infer which controls your forms has, which inputs and makes it easy for you to get started quickly.
 
+Where you need to add to get the form `(ngSubmit="").`. <br>
+Tells Angular hey please give me access to this form you created automatically. ` #f="ngForm"`
+`<form (ngSubmit)="onSubmit(f)" #f="ngForm">`
+Angular gives us a javascript object
+
+NgForm have a lot of properties, the majority are self explanatory.
+
+- **Dirty:** is if the input has some content. false if the user didn't write anything.
+
+We can access the form with `@ViewChild('f') signupForm: NgForm;`
+
+Angular have a lot of validators (Angular docs)[https://angular.io/api/forms/Validators] <br>
+For example `email` checks if it is a valid email, also they add CSS classes (ng-dirty, ng-touched, ng-valid)
+
+Changing the styles of ng classes
+
+```css
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+```
+
+### Three ways to bind a form
+
+1- **No binding** to just tell Angular that an input is a control
+
+2- **One-way binding** to give that control a default value
+3- **Two-way binding** to instantly output it or do whatever you want to do with that value.
+
+We can output error message, editing the class of ng
+
+```html
+<span class="help-block" *ngIf="!email.valid && email.touched"
+  >Please enter a valid value!</span
+>
+```
+
+Setting the default values `defaultQuestion = 'pet'`
+
+```html
+<select
+  id="secret"
+  class="form-control"
+  [ngModel]="defaultQuestion"
+  name="secret"
+>
+  <option value="pet">Your first Pet?</option>
+  <option value="teacher">Your first teacher?</option>
+</select>
+```
+
+Using ngModel with two way binding `answer = '';`
+
+```html
+<textarea
+  name="questionAnswer"
+  rows="3"
+  class="form-control"
+  [(ngModel)]="answer"
+></textarea>
+```
+
+To group the form we need to add `<div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">`
+
+Group the form in a JS object`ngModelGroup="userData" ` and to get access the JS object`#userData="ngModelGroup"`
+
+A bit different approach to use radio buttons. In TS file `genders = ['male', 'female'];`;
+
+```html
+<div class="radio" *ngFor="let gender of genders">
+  <label>
+    <input type="radio" name="gender" ngModel [value]="gender" required />
+    {{ gender }}
+  </label>
+</div>
+```
+
+### Modidy your form or populate
+
+`setValue` to set your whole form, `patchValue` to overwrite parts of the form.
+
+Very useful helper methods
+
+### Using form data
+
+This is how you can extract the data, how you can use it, how you can add a property like submitted to make sure you only display certain sections of the form was submitted and how you in the end use that data.
+
+```ts
+user = {...};
+submitted = false
+onSubmit() {...}
+```
+
+```html
+<div class="row" *ngIf="submitted">
+  <div class="col-xs-12">
+    <h3>Your Data</h3>
+    <p>Username: {{ user.name }}</p>
+    <p>Mail: {{ user.email }}</p>
+    <p>Secret Question: {{ user.secretQuestion }}</p>
+    <p>Answer: {{ user.answer }}</p>
+    <p>Gender: {{ user.gender }}</p>
+  </div>
+</div>
+```
+
+### Resetting forms
+
+When we submitted the form the inputs will be reset.
+
+```ts
+onSubmit(
+  ...
+  this.signupForm.reset();
+)
+
+```
+
+> Note: If you want, you can pass the same object as in setValue() to reset() which then reset the form to specific values!
+
 **Reactive Approach**
 _TDLR:_ Form is created programatically and synchronized with the DOM.
 <br>
