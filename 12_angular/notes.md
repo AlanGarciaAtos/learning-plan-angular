@@ -755,6 +755,63 @@ _TDLR:_ Form is created programatically and synchronized with the DOM.
 <br>
 You actually define the structure of the form in TypeScript code, you also set up the HTML code and then you manually connect it which might sound more complicated than it is in the end and therefore, it gives you greater control over it, you can fine tune every little piece about your form.
 
+### Create a form
+
+Creating your form via reactive approach. You can use multiple validator but you need to use an array.
+
+```ts
+this.signupForm = new FormGroup({
+  username: new FormControl(null, Validators.required),
+  email: new FormControl(null, [Validators.required, Validators.email]),
+  gender: new FormControl('male'),
+});
+```
+
+### Check if it is valid a form
+
+It need to return null, angular works like that. Maybe because it returns a value and make it invalid the form and get blocked??
+
+```ts
+forbiddenNames(control: FormControl): { [s: string]: boolean } {
+    if (this.forbiddenUsernames.indexOf(control.value) !== -1) {
+      return { 'nameIsFobidden': true }
+    }
+    return null;
+  }
+
+```
+
+### Reacting to status or value changes
+
+You can listen to or you can subscribe to if you really want to closely watch what happens in your form or again on an individual control and want to react to that.
+
+```ts
+this.signupForm.valueChanges.subscribe((value) => console.log(value));
+
+this.signupForm.statusChanges.subscribe((value) => console.log(value));
+```
+
+### Setting and patching values
+
+It's like we add a placeholder to our inputs. When we use patch value it will override whatever value we have in the form. In this case "Alan" overrides "Max"
+
+```ts
+this.signupForm.setValue({
+  userData: {
+    username: 'Max',
+    email: 'max@test.com',
+  },
+  gender: 'male',
+  hobbies: [],
+});
+
+this.signupForm.patchValue({
+  userData: {
+    username: 'Alan',
+  },
+});
+```
+
 ### Lesson I need to see again (probably)
 
 1- 16_How an Angular App gets Loaded and Started. See where all the imports and how files are connected
@@ -764,6 +821,7 @@ You actually define the structure of the form in TypeScript code, you also set u
 5- Reproducir
 6- 76_Getting Access to the Template & DOM with @ViewChild
 7- 78_Understanding the Component Lifecycle
+8- Remember what is property binding
 
 ### Current lesson
 
