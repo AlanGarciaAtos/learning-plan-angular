@@ -853,6 +853,8 @@ Can be set on _POST_ , _PUT_ & _PATCH_ which are requests that do alter data on 
 
 While fetching data is a good practice to separated in services.
 
+It is important the position of the providers, we can have some different output.
+
 ```ts
 providers: [
     {
@@ -870,6 +872,12 @@ providers: [
 ```
 
 https://angular.io/guide/http
+
+## Authentification
+
+See again 288 lesson (Authentification works)
+
+This is why this is secure, because the server knows more than the client but we give the client one important piece which is required to authenticate subsequent requests but that piece is given by the server, it can't be generated on the client for the security reasons I just stated.
 
 ### dsadsa
 
