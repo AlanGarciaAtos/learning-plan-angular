@@ -561,7 +561,7 @@ Now, you only get redirected, if the full path is '' (so only if you got NO othe
 
 So basically functionality, logic, code which is executed before a route is loaded or once you want to leave a route.
 
-`canActivate`, his neighbor `canActivateChild`, finally `canDeactivate` guards
+`canActivate`, his neighbor `canActivateChild`, finally `canDeactivate` guards. Also `canLoad`
 
 ### Protecting child (nested) routes
 
@@ -836,6 +836,8 @@ While using an API you need to go to the docs, or if you're creating one you nee
 
 > POST, GET, PUT, DELETE, PATCH
 
+DELETE: reciclar esa url
+
 3- **Headers (Metadata):** Kind of optional or to be precise, some default headers will be appended to a request for you by the browser and by Angular but you can also append your own headers and that is therefore also something we'll have a look at.
 
 `{"Content-Type":"aaplication/json"}`
@@ -878,6 +880,8 @@ https://angular.io/guide/http
 See again 288 lesson (Authentification works)
 
 This is why this is secure, because the server knows more than the client but we give the client one important piece which is required to authenticate subsequent requests but that piece is given by the server, it can't be generated on the client for the security reasons I just stated.
+
+Guardian or Guard in Angular
 
 ### dsadsa
 
