@@ -559,6 +559,7 @@ Now, you only get redirected, if the full path is '' (so only if you got NO othe
 
 ## Route guard
 
+Executes before loading a route y determines if it can load the route. <br>
 So basically functionality, logic, code which is executed before a route is loaded or once you want to leave a route.
 
 `canActivate`, his neighbor `canActivateChild`, finally `canDeactivate` guards. Also `canLoad`
@@ -1031,6 +1032,8 @@ Make the exercise to reinforce the knowledge.
 4- Experimental support for decorators is a feature that is subject to change in a future relasease (when manually creating a component)
 
 <!-- 5- ng-content is a hook??? Why maximilian called a hook, a typo? -->
+
+Angularfire
 
 6- Service workers and he said better approach the renderer than accessing the DOM
 7- Al utilizar @Injectable se tiene que usar en todos los "services", versiones anteriores no necesitaban pero ahora es buena practica o es obligatorio
