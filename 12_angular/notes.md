@@ -964,6 +964,15 @@ providers: [ShoppingListService, RecipeService,
 
 Guardian or Guard in Angular
 
+## Deployment in Angular
+
+Use % check environmental variables
+Polish & test code (small the application as possible)
+
+`ng build --prod` use ahead of time compilation
+
+Deploy build artifacts (generated files) to static host
+
 ### dsadsa
 
 Next js vs React js
@@ -1097,6 +1106,7 @@ Como podrias proteger la info en react, una libreria, o simplemente asi?
 6- 76_Getting Access to the Template & DOM with @ViewChild
 7- 78_Understanding the Component Lifecycle
 8- Remember what is property binding
+9- 340_Using Environment Variables
 
 ### Current lesson
 
