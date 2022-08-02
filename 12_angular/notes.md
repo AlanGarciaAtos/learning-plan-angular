@@ -969,9 +969,28 @@ Guardian or Guard in Angular
 Use % check environmental variables
 Polish & test code (small the application as possible)
 
-`ng build --prod` use ahead of time compilation
+This command for older version of Angular `ng build --prod` use ahead of time compilation
+Newer versions are `ng build`.
 
 Deploy build artifacts (generated files) to static host
+
+Url to hosting with firebase: https://firebase.google.com/docs/hosting
+
+## Angular Course Basic Unit Testing
+
+## Angular Workspaces
+
+A multi-project workspace is suitable for an enterprise that uses a single repository and global configuration for all Angular projects (the "monorepo" model).
+
+The following command creates a workspace with all of the workspace-wide configuration files, but no root-level application. `ng new my-workspace --create-application false`
+
+You can then generate applications and libraries with names that are unique within the workspace.
+`cd my-workspace`
+`ng generate application my-first-app`
+
+When you generate a library using the CLI (with a command such as `ng generate library my-lib`), the generated files go into the projects/ folder of the workspace.
+
+## NrWL workspaces (Javascript agnostic workspace)
 
 ### dsadsa
 
@@ -1107,6 +1126,7 @@ Como podrias proteger la info en react, una libreria, o simplemente asi?
 7- 78_Understanding the Component Lifecycle
 8- Remember what is property binding
 9- 340_Using Environment Variables
+10- 342_Deployment Example: Firebase Hosting
 
 ### Current lesson
 
@@ -1128,7 +1148,8 @@ Angularfire
 6- Service workers and he said better approach the renderer than accessing the DOM
 7- Al utilizar @Injectable se tiene que usar en todos los "services", versiones anteriores no necesitaban pero ahora es buena practica o es obligatorio
 8- Different way of injecting a service (Line 359 - 370?)
-9- Why there are Routes and Route?
+_9- Environmental variables I also see in other projects .env. Isn't the same because we're getting a variable or angular make some magic in there?_
+10- Why there are Routes and Route?
 
 14- bleedout term in angular????
 
