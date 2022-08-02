@@ -568,7 +568,7 @@ So basically functionality, logic, code which is executed before a route is load
 
 Now we get redirected back because now only the child routes are protected. So now this is the finegrained control you can implement to protect a whole route and all its child routes or just the child routes, depending on which behavior you need in your app.
 
-`canActivateChild: [AuthGuard],`
+This is located in _app-routing.module.ts_ `canActivateChild: [AuthGuard],`
 
 ### Location strategies
 
@@ -881,6 +881,86 @@ https://angular.io/guide/http
 See again 288 lesson (Authentification works)
 
 This is why this is secure, because the server knows more than the client but we give the client one important piece which is required to authenticate subsequent requests but that piece is given by the server, it can't be generated on the client for the security reasons I just stated.
+
+## Route guard
+
+Executes before loading a route y determines if it can load the route. <br>
+So basically functionality, logic, code which is executed before a route is loaded or once you want to leave a route.
+
+`canActivate`, his neighbor `canActivateChild`, finally `canDeactivate` guards. Also `canLoad`
+
+### Protecting child (nested) routes
+
+Now we get redirected back because now only the child routes are protected. So now this is the finegrained control you can implement to protect a whole route and all its child routes or just the child routes, depending on which behavior you need in your app.
+
+This is located in _app-routing.module.ts_ `canActivateChild: [AuthGuard],`
+
+`HttpErrorResponse` throws an error we can made magic to show the error to the user.
+
+### Guard ts CanActivate
+
+```ts
+export class AuthGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    router: RouterStateSnapshot
+  ):
+    | boolean
+    | UrlTree
+    | Promise<boolean | UrlTree>
+    | Observable<boolean | UrlTree> {
+    return this.authService.user.pipe(
+      take(1),
+      map((user) => {
+        const isAuth = !!user; //Here !user ? false : true
+        if (isAuth) {
+          return true;
+        }
+        return this.router.createUrlTree(['/auth']);
+        // return !user ? false : true; //Is the same as !!user
+      })
+    );
+  }
+}
+```
+
+## Intercepor service
+
+Also uses HttpParams for the user token so they can enter.
+
+```ts
+@Injectable()
+export class AuthInterceptorService implements HttpInterceptor {
+
+  constructor(private authService: AuthService) { }
+  intercept(req: HttpRequest<any>, next: HttpHandler) {
+    return this.authService.user.pipe(
+      take(1),
+      exhaustMap(user => {
+
+        if (!user) {
+          return next.handle(req);
+        }
+
+        const modifiedReq = req.clone({ params: new HttpParams().set('auth', user.token) })
+        return next.handle(modifiedReq);
+      })
+    );
+  }
+
+```
+
+Provided the designated services
+
+```ts
+providers: [ShoppingListService, RecipeService,
+  {
+    provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true
+  }
+],
+```
 
 Guardian or Guard in Angular
 
