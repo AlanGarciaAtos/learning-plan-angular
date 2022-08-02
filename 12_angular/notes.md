@@ -980,6 +980,8 @@ Url to hosting with firebase: https://firebase.google.com/docs/hosting
 
 ## Angular Workspaces
 
+Link to documentation https://angular.io/guide/file-structure
+
 A multi-project workspace is suitable for an enterprise that uses a single repository and global configuration for all Angular projects (the "monorepo" model).
 
 The following command creates a workspace with all of the workspace-wide configuration files, but no root-level application. `ng new my-workspace --create-application false`
@@ -998,7 +1000,14 @@ To see if you are using the library.
 3- In template add some hello mom or adsadsa something (if u want)
 4- Go to your projects folder, choose one of the projects, then (src>app>app.component.html)
 5- Add the selector in the html `<selector-name></selector-name>`
-6- It will appear your library!
+6- Update your app.module.ts, import from the dist the folder of your library, remember to add it in the app.module.ts
+
+```ts
+import { WorkspaceCommonModule } from 'workspace-common';
+imports: [WorkspaceCommonModule];
+```
+
+7- It will appear your library!
 
 ## NrWL workspaces (Javascript agnostic workspace)
 
