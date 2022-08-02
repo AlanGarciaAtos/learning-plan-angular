@@ -988,7 +988,17 @@ You can then generate applications and libraries with names that are unique with
 `cd my-workspace`
 `ng generate application my-first-app`
 
+Having multiple projects will serve the first angular project you created. Add the project name to the serve command `ng serve your-project-name`
+
 When you generate a library using the CLI (with a command such as `ng generate library my-lib`), the generated files go into the projects/ folder of the workspace.
+
+To see if you are using the library.
+1- Build your library `ng build your-library-name`
+2- Go to library src, find the the your-component-name.component.ts and copy or remember the selector.
+3- In template add some hello mom or adsadsa something (if u want)
+4- Go to your projects folder, choose one of the projects, then (src>app>app.component.html)
+5- Add the selector in the html `<selector-name></selector-name>`
+6- It will appear your library!
 
 ## NrWL workspaces (Javascript agnostic workspace)
 
