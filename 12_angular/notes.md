@@ -999,6 +999,31 @@ To test the angular project `ng test`
 
 ### Isolated and Non-isolated tests
 
+Shallow and deep
+Shallow integration test: test a single component with its template
+deep integration test: test many components actually having child components
+
+**Non-isolated:** depends of the angular app. Dependent on the testing utilities provided by Angular 2 such as TestBed, async etc.
+
+**Isolated:** which does not depend on any other piece of our Angular application. Run individually without the need of Anugluar itself,
+
+Reverse a string.
+
+```ts
+export class ReversePipe {
+  transform(value: string) {
+    return value.split("").reverse().join("");
+  }
+}
+---Test Below---
+describe('Reverse string', () => {
+  it('should reverse correctly an string', () => {
+    let reversePipe = new ReversePipe;
+    expect(reversePipe.transform('hello')).toEqual('olleh');
+  });
+})
+```
+
 ## Angular Workspaces
 
 Link to documentation https://angular.io/guide/file-structure
