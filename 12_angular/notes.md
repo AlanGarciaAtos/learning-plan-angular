@@ -1015,7 +1015,7 @@ export class ReversePipe {
     return value.split("").reverse().join("");
   }
 }
----Test Below---
+---Test Below [Different file]---
 describe('Reverse string', () => {
   it('should reverse correctly an string', () => {
     let reversePipe = new ReversePipe;
@@ -1098,8 +1098,10 @@ angular course basic unit testing
 8- Different way of injecting a service (Line 359 - 370?)
 _9- Environmental variables I also see in other projects .env. Isn't the same because we're getting a variable or angular make some magic in there?_
 10- Why there are Routes and Route?
-
-14- bleedout term in angular????
+11- NrWL workspaces is agnostic so, for angular is better angular workspaces?
+12- Usar nx para otros proyectos??
+13- En angular workspaces creamos una libreria comun (lib) para pasar codigo a otros projectos
+21- bleedout term in angular????
 
 ### Coso de CLI que es
 
